@@ -1,0 +1,52 @@
+.button {
+    display: inline-block;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+    text-decoration: none;
+    background: $colorYellow;
+    color: $colorText;
+    padding: 24px 28px;
+    border: 0;
+    transition: .2s linear;
+    border-radius: 10px;
+    cursor: pointer;
+    &.small {
+        font-size: 14px;
+        line-height: 17px;
+        padding: 12px;
+        border-radius: 6px;
+    }
+    &.blue {
+        background: $colorBlue;
+        color: $colorWhite;
+    }
+    &.dark-blue {
+        background: $colorMainBlue;
+        color: $colorWhite;
+    }
+    &.with-icon {
+        display: flex;
+        align-items: center;
+        width: max-content;
+        span {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        i {
+            display: inline-block;
+            margin-top: 3px;
+            color: rgba(255, 255, 255, 0.5) !important;
+        }
+    }
+
+    &:hover {
+        background: darken($colorYellow, 10%);
+        &.blue {
+            background: darken($colorBlue, 10%);
+        }
+        &.dark-blue {
+            background: darken($colorMainBlue, 10%);
+        }
+    }
+}

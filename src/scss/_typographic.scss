@@ -1,0 +1,89 @@
+// Типографика
+
+.section {
+    display: block;
+    position: relative;
+    z-index: 10;
+    margin: 0;
+    padding: 50px 0;
+    @include mobile {
+        padding: 20px 0;
+    }
+}
+
+h1, .h1 {
+    font-weight: 800;
+    font-size: 58px;
+    line-height: 75px;
+    color: $colorText;
+    @include mobile {
+        font-size: 28px;
+        line-height: 36px;
+    }
+}
+
+h3, .h3 {
+    font-weight: 800;
+    font-size: 34px;
+    line-height: 44px;
+    color: $colorText;
+    @include mobile {
+        font-size: 30px;
+        line-height: 39px;
+    }
+}
+
+
+p {
+    font-size: 17px;
+    line-height: 29px;
+    color: $colorText;
+    .small-text {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+
+
+
+a {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    line-height: 22px;
+    color: $colorText;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-decoration: none;
+    @include mobile {
+        font-size: 16px;
+        line-height: 19px;
+    }
+}
+
+.bold-text {
+    font-weight: 600 !important;
+}
+.normal-text {
+    font-weight: normal !important;
+}
+.text-uppercase {
+    text-transform: uppercase !important;
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+    & > div, & > p {
+        width: 100%;
+    }
+}

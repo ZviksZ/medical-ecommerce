@@ -1,0 +1,85 @@
+<% var data = {
+title: "Pentcroft"
+}; %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
+
+
+<section class="section">
+    <div class="container">
+        <h1>Заголовок h1</h1>
+        <div class="h1">Заголовок h1</div>
+
+
+        <h3>Заголовок h3</h3>
+        <div class="h3">Заголовок h3</div>
+
+        <p>Параграф</p>
+
+
+        <a href="#" class="button">Link</a>
+        <a href="#" class="button small">Link</a>
+        <button class="button">Button</button>
+        <div class="button">Div btn</div>
+
+        <a href="#" class="button small">Link</a>
+        <a href="#" class="button blue">Link</a>
+        <a href="#" class="button dark-blue">Link</a>
+        <a href="#" class="button small blue">Link</a>
+        <a href="#" class="button small dark-blue">Link</a>
+        <a href="#" class="button blue with-icon">
+            <span>Link</span>
+            <i class="icon-scatter"></i>
+        </a>
+
+
+
+
+        <div>
+            <label class="field field-input item">
+                <input class="input-text placeholder validate" placeholder="Текстовый инпут регулар" data-placeholder="Текстовый инпут регулар" data-validate="required"
+                       name="f_name" type="text">
+                <p class="error-message"></p>
+            </label>
+        </div>
+
+        <form action="" class="form">
+            <div class="form-row">
+                <label class="field field-input item">
+                    <input class="input-text placeholder validate" placeholder="Текстовый инпут регулар" data-placeholder="Название инпута" data-validate="required"
+                           name="f_name" type="text">
+                    <p class="error-message"></p>
+                </label>
+
+                <label class="field field-input item">
+                    <input class="input-text placeholder validate input-mask" placeholder="Текстовый инпут регулар" data-mask_tpl="phone_plus7" data-placeholder="Название инпута" data-validate="mobile_phone"
+                           name="f_phone" type="text" value="" inputmode="text">
+                    <p class="error-message"></p>
+                </label>
+            </div>
+        </form>
+
+        <div class="margin-bottom-x2 margin-top-x2">
+            <select name="" class="custom-select" id="">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+
+        <div class="tabs">
+            <div class="item disabled">Small</div>
+            <div class="item active">Small</div>
+            <div class="item">Small</div>
+        </div>
+
+        <div class="margin-top-x2 margin-bottom-x2">
+            <div class="filter-btn">Нозологии</div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>

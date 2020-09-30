@@ -1,0 +1,64 @@
+.tabs {
+    display: flex;
+    align-items: center;
+    overflow: auto;
+    .item {
+        display: inline-block;
+        font-weight: bold;
+        font-size: 17px;
+        line-height: 29px;
+        padding: 10px 16px;
+        color: $colorText;
+        border-radius: 6px;
+        border: 2px solid $colorGrayLight;
+        cursor: pointer;
+        &.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        &.active {
+            border: 2px solid $colorBlue;
+        }
+        @include desktop {
+            &:hover {
+                border: 2px solid $colorBlue;
+                color: $colorBlue;
+            }
+        }
+    }
+    .item + .item {
+        margin-left: 14px;
+    }
+}
+.filter-btn {
+    width: 100%;
+    position: relative;
+    background: $colorWhite;
+    border-radius: 6px;
+    color: $colorText;
+    white-space: nowrap;
+    padding: 10px 30px 10px 17px;
+    font-size: 17px;
+    line-height: 29px;
+    font-weight: 700;
+    height: 50px;
+    min-height: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border: 2px solid $colorBlue;
+    cursor: pointer;
+    &:after{
+        font-family: "pentcroft" !important;
+        position: absolute;
+        top: 10px;
+        right: 17px;
+        content: "\61";
+        color: $colorText;
+        border: 0;
+        font-size: 18px;
+        width: 10px;
+        height: 10px;
+    }
+
+}
