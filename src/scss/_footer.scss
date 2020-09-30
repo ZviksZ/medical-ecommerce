@@ -1,1 +1,117 @@
-.footer {}
+.footer {
+    width: 100%;
+    margin-top: auto;
+    background: $colorBgSection;
+    .footer-content {
+        padding: 44px 0;
+        display: flex;
+        .footer-part {
+            width: 25%;
+            padding-right: 70px;
+        }
+        .footer-item {
+            display: flex;
+            flex-wrap: wrap;
+            .desc {
+                width: 100%;
+                font-size: 12px;
+                line-height: 14px;
+                color: #6A6A6A;
+                margin-bottom: 7px;
+            }
+            .link {
+                position: relative;
+                padding-left: 29px;
+                img {
+                    position: absolute;
+                    left: 0;
+                    top: 3px;
+                    display: block;
+                }
+                span {
+                    font-weight: bold;
+                    font-size: 18px;
+                    line-height: 22px;
+                    color: $colorText;
+                }
+            }
+        }
+        .footer-item + .footer-item {
+            margin-top: 32px;
+        }
+        .footer__link {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            line-height: 19px;
+            color: $colorText;
+            &.big {
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 22px;
+            }
+            img {
+                display: block;
+                margin-left: 15px;
+            }
+        }
+        .footer__link + .footer__link {
+            margin-top: 32px;
+        }
+        .footer__socials {
+            display: flex;
+            flex-direction: column;
+            margin-top: 32px;
+            a {
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                line-height: 19px;
+                color: $colorText;
+                img {
+                    display: block;
+                    margin-right: 16px;
+                }
+            }
+            a + a {
+                margin-top: 32px;
+            }
+        }
+    }
+    .footer-copy {
+        width: 100%;
+        height: 70px;
+        background: $colorGrayDarken;
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        .company {
+            font-size: 16px;
+            line-height: 19px;
+            color: #333333;
+            margin-right: auto;
+        }
+        .info {
+            display: inline-block;
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+            text-decoration-line: underline;
+            color: #333333;
+        }
+        .lab {
+            margin-left: auto;
+        }
+    }
+    a:not(.button) {
+        transition: .2s ease;
+        @include desktop {
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}

@@ -6,6 +6,7 @@
     z-index: 10;
     margin: 0;
     padding: 50px 0;
+    overflow: hidden;
     @include mobile {
         padding: 20px 0;
     }

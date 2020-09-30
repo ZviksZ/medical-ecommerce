@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="preloader-page">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
@@ -18,12 +18,181 @@
     <title><%=title%></title>
 </head>
 <body>
+<style>
+    .preloader {
+        display: none;
+    }
+    .preloader-page .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #005CA9;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .preloader .bg,
+    .preloader .bg-hide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .preloader .bg img {
+        display: block;
+        max-width: 100%;
+        width: 875px;
+        height: 763px;
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+        transition: .3s linear;
+    }
+    .preloader .bg-hide img {
+        display: block;
+        max-width: 100%;
+        width: 875px;
+        height: 763px;
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+        transition: .3s linear;
+    }
+    .text {
+        display: block;
+        max-width: 100%;
+        position: relative;
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+        transition: .3s linear;
+        transition-delay: .4s;
+    }
 
-<div class="preloader"></div>
+    .preloader.animate-start .bg img,
+    .preloader.animate-start .text {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    .preloader-hide .preloader.animate-start .bg img {
+        opacity: 0;
+        transform: translateY(0) scale(2.4);
+    }
+    .preloader-hide .preloader.animate-start .bg-hide img {
+        opacity: 1;
+        transform: translateY(0) scale(2.4);
+    }
+    .preloader-hide .preloader.animate-start .text {
+        display: none;
+    }
+</style>
+<div class="preloader" id="page_preloader">
+    <div class="bg">
+        <img src="/img/loader/bg.svg" alt="">
+    </div>
+    <div class="bg-hide">
+        <img src="/img/loader/bg-hide.svg" alt="">
+    </div>
+    <img src="/img/loader/text.svg" alt="" class="text">
+</div>
 
+<!-- Для главной страницы добавить хедеру класс header-transparent -->
+<% if (header === 'transparent') { %>
+<div id="header" class="header header-transparent">
+<% } else { %>
+<div id="header" class="header">
+<% } %>
+    <div class="header-top hide-mobile">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-top__menu">
+                    <a href="#">О компании</a>
+                    <a href="#">Вопрос-ответ</a>
+                    <a href="#">Контакты</a>
+                </div>
+                <a href="#" class="header-top__link">EN</a>
+                <a href="#" class="header-top__link with-icon">
+                    <i class="icon-search"></i>
+                </a>
+                <a href="mailto:info@pentcroft.ru" class="header-top__link email-link">
+                    info@pentcroft.ru
+                </a>
+            </div>
+        </div>
 
-<div id="header" class="header header-black">
+    </div>
+    <div class="header-main hide-mobile">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="/img/logo-text.svg" alt="">
+                </a>
+
+                <div class="header-main__menu">
+                    <a class="item" href="#">Каталог продуктов</a>
+                    <a class="item" href="#">Закупщикам</a>
+                    <a class="item" href="#">
+                        <span>Интернет-магазин</span>
+                        <img src="/img/link-icon.svg" alt="">
+                    </a>
+                    <div class="header-main__double-link">
+                        <a class="item" href="tel:74957887746">+7 (495) 788-77-46</a>
+                        <a href="#" class="call-btn">Заказать звонок</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-mobile hide-desktop">
+        <div class="header__burger" id="header__burger">
+            <span></span>
+        </div>
+        <a href="/" class="logo">
+            <img src="/img/logo.svg" alt="">
+        </a>
+        <a href="#" class="call-btn">
+            <img src="/img/phone-icon.svg" alt="">
+        </a>
+
+    </div>
+</div>
+
+<div class="header-menu__mobile">
+    <div class="header-margin"></div>
+    <div class="container">
+        <a href="" class="header-menu__item big">Каталог продуктов</a>
+        <a href="" class="header-menu__item big">Закупщикам</a>
+        <a href="" class="header-menu__item big with-icon">
+            <span>Интернет-магазин</span>
+            <img src="/img/link-icon.svg" alt="">
+        </a>
+        <a href="" class="header-menu__item ">О компании</a>
+        <a href="" class="header-menu__item ">Вопрос-ответ</a>
+        <a href="" class="header-menu__item ">Контакты</a>
+        <div class="header-menu__double-link">
+            <a class="item" href="tel:74957887746">+7 (495) 788-77-46</a>
+            <a href="#" class="call-btn">Заказать звонок</a>
+        </div>
+        <div class="header-menu__footer">
+            <a href="mailto:info@pentcroft.ru" class="header-menu__item email-link">info@pentcroft.ru</a>
+
+            <a href="#" class="header-menu__round-link mla">EN</a>
+            <a href="#" class="header-menu__round-link">
+                <i class="icon-search"></i>
+            </a>
+        </div>
+    </div>
 
 </div>
 
+<div class="preloader-page-pxl"></div>
+
 <div class="body ">
+    <!-- Для главной страницы не отображать header-margin -->
+    <% if (header !== 'transparent') { %>
+    <div class="header-margin"></div>
+    <% } %>
