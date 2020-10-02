@@ -38,6 +38,9 @@
         }
         .footer-item + .footer-item {
             margin-top: 32px;
+            @include mobile {
+                margin-top: 30px;
+            }
         }
         .footer__link {
             display: flex;
@@ -85,14 +88,17 @@
         .container {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             height: 100%;
         }
         .company {
             font-size: 16px;
             line-height: 19px;
             color: #333333;
-            margin-right: auto;
+            @include mobile {
+                font-size: 14px;
+                line-height: 17px;
+            }
         }
         .info {
             display: inline-block;
@@ -101,9 +107,33 @@
             text-align: center;
             text-decoration-line: underline;
             color: #333333;
+            @include mobile {
+                font-size: 14px;
+                line-height: 17px;
+            }
         }
-        .lab {
-            margin-left: auto;
+        .footer-copy__left {
+            display: flex;
+            width: 60%;
+            align-items: center;
+            justify-content: space-between;
+        }
+        @include mobile {
+            .footer-copy__left {
+                width: auto;
+                flex-direction: column;
+                align-items: flex-start;
+                .company {
+                    white-space: nowrap;
+                    margin-bottom: 8px;
+                }
+            }
+            .lab {
+                width: 95px;
+                img {
+                    width: 100%;
+                }
+            }
         }
     }
     a:not(.button) {
@@ -111,6 +141,43 @@
         @include desktop {
             &:hover {
                 opacity: 0.8;
+            }
+        }
+    }
+    @include mobile {
+        .footer-content {
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .footer-part {
+                width: 48%;
+                padding-right: 0;
+                margin-bottom: 30px;
+                .button {
+                    width: 100%;
+                }
+                .footer__socials {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    margin-top: 30px;
+                    a {
+                        span {
+                            display: none;
+                        }
+                    }
+                    a + a {
+                        margin-top: 0;
+                        margin-left: 35px;
+                    }
+                }
+            }
+        }
+    }
+    @include only-mobile {
+        .footer-content {
+            flex-wrap: wrap;
+            .footer-part {
+                width: 100%;
             }
         }
     }

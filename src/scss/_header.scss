@@ -244,6 +244,9 @@
 
 }
 .menu-open {
+    body {
+        overflow: hidden;
+    }
     .header {
         .header-mobile {
             .header__burger {

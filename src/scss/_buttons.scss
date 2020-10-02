@@ -11,6 +11,10 @@
     transition: .2s linear;
     border-radius: 10px;
     cursor: pointer;
+    text-align: center;
+    @include mobile {
+        padding: 16px 24px;
+    }
     &.small {
         font-size: 14px;
         line-height: 17px;
@@ -39,14 +43,16 @@
             color: rgba(255, 255, 255, 0.5) !important;
         }
     }
-
-    &:hover {
-        background: darken($colorYellow, 10%);
-        &.blue {
-            background: darken($colorBlue, 10%);
-        }
-        &.dark-blue {
-            background: darken($colorMainBlue, 10%);
+    @include desktop {
+        &:hover {
+            background: darken($colorYellow, 10%);
+            &.blue {
+                background: darken($colorBlue, 10%);
+            }
+            &.dark-blue {
+                background: darken($colorMainBlue, 10%);
+            }
         }
     }
+
 }

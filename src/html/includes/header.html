@@ -44,6 +44,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
     }
     .preloader .bg img {
         display: block;
@@ -63,7 +64,7 @@
         transform: translateY(50px) scale(0.9);
         transition: .3s linear;
     }
-    .text {
+    .preloader .text {
         display: block;
         max-width: 100%;
         position: relative;
@@ -88,6 +89,17 @@
     }
     .preloader-hide .preloader.animate-start .text {
         display: none;
+    }
+    @media screen and (max-width: 1000px) {
+        .preloader .text {
+            max-width: 80%;
+        }
+        .preloader .bg img {
+            max-width: 80%;
+        }
+        .preloader .bg-hide img {
+            max-width: 80%;
+        }
     }
 </style>
 <div class="preloader" id="page_preloader">

@@ -14,6 +14,7 @@ export class Preloader {
    init = () => {
       if (this.$pagePreloader.length) {
          this.$pagePreloader.addClass('animate-start');
+         $('body').addClass('overflow-hidden');
 
          setTimeout(() => {
             $('.preloader-page').addClass('preloader-hide')
@@ -21,6 +22,8 @@ export class Preloader {
          setTimeout(() => {
             this.hidePreloaderPage();
             this.$pagePreloader.remove();
+            $('html').addClass('main-page-animate')
+            $('body').removeClass('overflow-hidden');
          }, 2500);
       } else {
          this.hidePreloaderPage();

@@ -1,20 +1,265 @@
-<% var data = {
-title: "Pentcroft",
-header: "transparent"
-}; %>
-<%= _.template(require('./../includes/header.html').default)(data) %>
+<% var data = { title: "Pentcroft", header: "transparent" }; %> <%= _.template(require('./../includes/header.html').default)(data) %>
 
+<section class="section main-top no-padding-top">
+   <div class="header-margin"></div>
+   <div class="bg">
+      <img alt="" src="/img/loader/bg-hide.svg" />
+   </div>
+   <div class="container">
+      <div class="main-top__content">
+         <div class="left">
+            <h1 class="h1 color-white margin-bottom-x2 ">
+               Здоровье не купишь, но его можно восстановить и сохранить
+               <span class="color-yellow">с помощью наших продуктов</span>
+            </h1>
+            <p class="color-white  margin-bottom-x2 ">Вместе с нашими клиентами, нами движет чтобы сделать здравоохранение лучше.</p>
+            <div class="btn-delay">
+                <a class="button hide-mobile" href="#">Каталог продуктов</a>
+            </div>
 
-<section class="section main-top">
-    <div class="header-margin"></div>
-    <div class="bg">
-        <img src="/img/loader/bg-hide.svg" alt="">
-    </div>
-    <div class="main-top__content">
+         </div>
+         <div class="right">
+            <div class="card">
+                <div class="bg"></div>
+               <span class="text">Врачам</span>
+               <div class="overlay">
+                  <div class="img" style="background-image: url('/img/main/main1.png')"></div>
+               </div>
+            </div>
+            <div class="card card-bottom ">
+                <div class="bg"></div>
+               <span class="text">Пациентам</span>
+               <div class="overlay">
+                  <div class="img" style="background-image: url('/img/main/main2.png')"></div>
+               </div>
+            </div>
+             <a class="button hide-desktop" href="#">Каталог продуктов</a>
+         </div>
+      </div>
+   </div>
+</section>
 
+<section class="section section-bg">
+    <div class="container">
+        <h3 class="h3">Популярные товары</h3>
+        <div class="product-popular-slider" id="product-popular-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#"  class="card-item">
+                        <div class="card-item__top">
+                            <div class="card-item__rating">
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star star-gray"></div>
+                            </div>
+                            <span class="card-item__tag color-1">Новинка</span>
+                        </div>
+                        <div class="card-item__content">
+                            <div class="card-item__img" style="background-image: url(/img/cards/1.png)"></div>
+                            <div class="card-item__text-block">
+                                <div class="card-item__title">Пессарии гинекологические</div>
+                                При помощи данного кубического пессария решаются проблемы При помощи данного кубического пессария решаются проблемы
+
+                            </div>
+                            <button class="button small blue">Узнать подробнее</button>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#"  class="card-item">
+                        <div class="card-item__top">
+                            <div class="card-item__rating">
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star star-gray"></div>
+                            </div>
+                            <span class="card-item__tag color-1">Новинка</span>
+                        </div>
+                        <div class="card-item__content">
+                            <div class="card-item__img" style="background-image: url(/img/cards/1.png)"></div>
+                            <div class="card-item__text-block">
+                                <div class="card-item__title">Пессарии гинекологические</div>
+                                При помощи данного кубического пессария решаются проблемы При помощи данного кубического пессария решаются проблемы
+
+                            </div>
+                            <button class="button small blue">Узнать подробнее</button>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#"  class="card-item">
+                        <div class="card-item__top">
+                            <div class="card-item__rating">
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star star-gray"></div>
+                            </div>
+                            <span class="card-item__tag color-1">Новинка</span>
+                        </div>
+                        <div class="card-item__content">
+                            <div class="card-item__img" style="background-image: url(/img/cards/1.png)"></div>
+                            <div class="card-item__text-block">
+                                <div class="card-item__title">Пессарии гинекологические</div>
+                                При помощи данного кубического пессария решаются проблемы При помощи данного кубического пессария решаются проблемы
+
+                            </div>
+                            <button class="button small blue">Узнать подробнее</button>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#"  class="card-item">
+                        <div class="card-item__top">
+                            <div class="card-item__rating">
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star star-gray"></div>
+                            </div>
+                            <span class="card-item__tag color-1">Новинка</span>
+                        </div>
+                        <div class="card-item__content">
+                            <div class="card-item__img" style="background-image: url(/img/cards/1.png)"></div>
+                            <div class="card-item__text-block">
+                                <div class="card-item__title">Пессарии гинекологические</div>
+                                При помощи данного кубического пессария решаются проблемы При помощи данного кубического пессария решаются проблемы
+
+                            </div>
+                            <button class="button small blue">Узнать подробнее</button>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#"  class="card-item">
+                        <div class="card-item__top">
+                            <div class="card-item__rating">
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star star-gray"></div>
+                            </div>
+                            <span class="card-item__tag color-1">Новинка</span>
+                        </div>
+                        <div class="card-item__content">
+                            <div class="card-item__img" style="background-image: url(/img/cards/1.png)"></div>
+                            <div class="card-item__text-block">
+                                <div class="card-item__title">Пессарии гинекологические</div>
+                                При помощи данного кубического пессария решаются проблемы При помощи данного кубического пессария решаются проблемы
+
+                            </div>
+                            <button class="button small blue">Узнать подробнее</button>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#"  class="card-item">
+                        <div class="card-item__top">
+                            <div class="card-item__rating">
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star star-gray"></div>
+                            </div>
+                            <span class="card-item__tag color-1">Новинка</span>
+                        </div>
+                        <div class="card-item__content">
+                            <div class="card-item__img" style="background-image: url(/img/cards/1.png)"></div>
+                            <div class="card-item__text-block">
+                                <div class="card-item__title">Пессарии гинекологические</div>
+                                При помощи данного кубического пессария решаются проблемы При помощи данного кубического пессария решаются проблемы
+
+                            </div>
+                            <button class="button small blue">Узнать подробнее</button>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#"  class="card-item">
+                        <div class="card-item__top">
+                            <div class="card-item__rating">
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star star-gray"></div>
+                            </div>
+                            <span class="card-item__tag color-1">Новинка</span>
+                        </div>
+                        <div class="card-item__content">
+                            <div class="card-item__img" style="background-image: url(/img/cards/1.png)"></div>
+                            <div class="card-item__text-block">
+                                <div class="card-item__title">Пессарии гинекологические</div>
+                                При помощи данного кубического пессария решаются проблемы При помощи данного кубического пессария решаются проблемы
+
+                            </div>
+                            <button class="button small blue">Узнать подробнее</button>
+                        </div>
+
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
+<section class="section">
+    <div class="container">
+        <h3 class="h3">Наши бренды</h3>
 
+        <div class="partners-list">
+            <a href="#" class="item">
+                <div class="bg" style="background-image: url(/img/partners/1.jpg)"></div>
+            </a>
+            <a href="#" class="item">
+                <div class="bg" style="background-image: url(/img/partners/2.jpg)"></div>
+            </a>
+            <a href="#" class="item">
+                <div class="bg" style="background-image: url(/img/partners/3.jpg)"></div>
+            </a>
+            <a href="#" class="item">
+                <div class="bg" style="background-image: url(/img/partners/1.jpg)"></div>
+            </a>
+            <a href="#" class="item">
+                <div class="bg" style="background-image: url(/img/partners/2.jpg)"></div>
+            </a>
+            <a href="#" class="item">
+                <div class="bg" style="background-image: url(/img/partners/3.jpg)"></div>
+            </a>
+            <a href="#" class="item">
+                <div class="bg" style="background-image: url(/img/partners/1.jpg)"></div>
+            </a>
+            <a href="#" class="item">
+                <div class="bg" style="background-image: url(/img/partners/2.jpg)"></div>
+            </a>
+            <a href="#" class="item">
+                <div class="bg" style="background-image: url(/img/partners/3.jpg)"></div>
+            </a>
+            <a href="#" class="item">
+                <div class="bg" style="background-image: url(/img/partners/1.jpg)"></div>
+            </a>
+            <a href="#" class="item">
+                <div class="bg" style="background-image: url(/img/partners/2.jpg)"></div>
+            </a>
+            <a href="#" class="item">
+                <div class="bg" style="background-image: url(/img/partners/3.jpg)"></div>
+            </a>
+        </div>
+    </div>
+</section>
 
 <%= _.template(require('./../includes/footer.html').default)(data) %>

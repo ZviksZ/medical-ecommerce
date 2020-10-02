@@ -1,0 +1,51 @@
+.partners-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 52px -16px 0;
+    .item {
+        position: relative;
+        width: calc(16.6666666666% - 32px);
+        margin: 0 16px 46px;
+        background: $colorWhite;
+        box-shadow: 0 10px 20px rgba(9, 41, 67, 0.1);
+        border-radius: 4px;
+        padding: 16px 14px;
+        &:before {
+            display: block;
+            float: left;
+            content: '';
+            padding-top: 58%;
+        }
+        .bg {
+            position: absolute;
+            top: 16px;
+            left: 14px;
+            width: calc(100% - 28px);
+            height: calc(100% - 32px);
+            background-repeat: no-repeat;
+            background-position: center center;
+            -webkit-background-size: contain;
+            background-size: contain;
+            transition: .2s linear;
+        }
+        @include desktop {
+            &:hover {
+                .bg {
+                    transform: scale(1.05);
+                }
+            }
+        }
+        @include desktop-smaller {
+            width: calc(25% - 32px);
+        }
+        @include mobile {
+            width: calc(25% - 32px);
+            margin-bottom: 35px;
+        }
+        @include only-mobile {
+            width: calc(50% - 32px);
+            margin-bottom: 30px;
+        }
+    }
+}
