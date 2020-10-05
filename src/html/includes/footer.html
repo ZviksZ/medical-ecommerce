@@ -89,9 +89,92 @@
 
 
 
-<div class="modal-window fade-in media-video-modal" data-modal="media-video-modal" id="media-video-modal">
-    <a href="#" class="close close-small" data-close-modal-button="media-video-modal" data-effect-type="open-modal-fade-effect"></a>
+<div class="modal-window fade-in catalog-modal" data-modal="catalog-modal" id="catalog-modal">
+
     <div class="modal-content">
+        <div class="container">
+            <div class="title-with-filter margin-top-x2">
+                <h1 class="h1" id="catalog-filter-title">
+                    Нозологии<span class="text-for-search hide">:</span>
+                    <span class="count"></span>
+                </h1>
+                <a href="#" class="close" data-close-modal-button="catalog-modal" data-effect-type="open-modal-fade-effect"><i class="icon-cancel"></i></a>
+            </div>
+            <div class="margin-top-x2">
+                <label class="field field-input item with-search-icon">
+                    <input class="input-text placeholder" placeholder="Введите категорию" data-placeholder="Поиск по нозологиям"
+                           name="filter-search" id="catalog-filter-search" type="text">
+                    <p class="error-message"></p>
+                </label>
+            </div>
+
+            <div class="filter-item filter-item__main">
+                <input type="checkbox" id="filter-select-all" name="filter-select-all" checked>
+                <label class="" for="filter-select-all">
+                    <span>Выбрать все</span>
+                </label>
+            </div>
+
+            <form action="" id="catalog-filter-form">
+                <div class="catalog-categories-list" id="catalog-categories-list">
+                    <div class="letter-item">
+                        <span class="letter">А</span>
+                        <div class="filter-item">
+                            <input type="checkbox" id="filter-1" name="filter-1" checked>
+                            <label class="" for="filter-1">
+                                <span>Аменореи</span>
+                            </label>
+                        </div>
+                        <div class="filter-item">
+                            <input type="checkbox" id="filter-2" name="filter-2" checked>
+                            <label class="" for="filter-2">
+                                <span>Аменореи</span>
+                            </label>
+                        </div>
+                        <div class="filter-item">
+                            <input type="checkbox" id="filter-3" name="filter-3" checked>
+                            <label class="" for="filter-3">
+                                <span>Аменореи</span>
+                            </label>
+                        </div>
+                        <div class="filter-item">
+                            <input type="checkbox" id="filter-4" name="filter-4" checked>
+                            <label class="" for="filter-4">
+                                <span>Аменореи</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="letter-item">
+                        <span class="letter">Б</span>
+                        <div class="filter-item">
+                            <input type="checkbox" id="filter-12" name="filter-12" checked>
+                            <label class="" for="filter-12">
+                                <span>Бактериальный</span>
+                            </label>
+                        </div>
+                        <div class="filter-item">
+                            <input type="checkbox" id="filter-22" name="filter-22" checked>
+                            <label class="" for="filter-22">
+                                <span>Бактериальный</span>
+                            </label>
+                        </div>
+                        <div class="filter-item">
+                            <input type="checkbox" id="filter-32" name="filter-32" checked>
+                            <label class="" for="filter-32">
+                                <span>Бактериальный</span>
+                            </label>
+                        </div>
+                        <div class="filter-item">
+                            <input type="checkbox" id="filter-42" name="filter-42" checked>
+                            <label class="" for="filter-42">
+                                <span>Бактериальный</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
 
     </div>
 </div>

@@ -2,7 +2,11 @@
     position: relative;
     background: $colorMainBlue;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
+    @include mobile {
+        height: auto;
+        min-height: 100vh;
+    }
     .bg {
         position: absolute;
         top: 0;
@@ -20,6 +24,9 @@
             height: 763px;
             transform: scale(2.4);
             transition: .3s linear;
+            @include desktop-smaller {
+                max-width: 80%;
+            }
             @include mobile {
                 max-width: 80%;
             }
@@ -45,6 +52,12 @@
             .btn-delay {
                 transition-delay: .5s;
             }
+            @include desktop-smaller {
+                .h1 {
+                    font-size: 40px;
+                    line-height: 48px;
+                }
+            }
         }
         .right {
             width: 100%;
@@ -52,6 +65,9 @@
             margin-left: 34px;
             display: flex;
             flex-direction: column;
+            @include desktop-small {
+                max-width: 450px;
+            }
             .card {
                 position: relative;
                 display: block;

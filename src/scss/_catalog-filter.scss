@@ -1,0 +1,50 @@
+.catalog-modal {
+    .modal-content {
+        margin: 0 !important;
+        max-width: 100%;
+        overflow: auto;
+        &::-webkit-scrollbar { width: 0; }
+        & { -ms-overflow-style: none; }
+        & { overflow: -moz-scrollbars-none; }
+    }
+    .h1 {
+        .count {
+            color: $colorBlue;
+        }
+    }
+
+    .filter-item {
+        margin-bottom: 28px;
+        span {
+            font-size: 20px;
+            line-height: 24px;
+            color: $colorText;
+        }
+        &.filter-item__main {
+            span {
+                font-weight: bold;
+                font-size: 19px;
+                line-height: 24px;
+                text-decoration-line: underline;
+                color: $colorBlue;
+            }
+        }
+    }
+
+    .letter-item {
+        position: relative;
+        padding-left: 42px;
+        padding-top: 4px;
+        margin-bottom: 28px;
+        .letter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-weight: 800;
+            font-size: 28px;
+            line-height: 1;
+            text-align: center;
+            color: $colorText;
+        }
+    }
+}

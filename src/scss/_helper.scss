@@ -34,8 +34,14 @@
 .display-flex {
     display: flex !important;
 }
+.align-item-center {
+    align-items: center !important;
+}
 .display-inline-flex {
     display: inline-flex !important;
+}
+.hide {
+    display: none !important;
 }
 
 .no-margin {
@@ -205,24 +211,6 @@
     font-style: italic;
 }
 
-/*
-.color-main {
-    color: $colorMain !important;
-}
-.color-main-active {
-    color: $colorMainActive !important;
-}
-
-.color-text-gray {
-    color: $colorTextGray !important;
-}
-.color-link {
-    color: $colorLink !important;
-}
-.color-error {
-    color: $colorError !important;
-}
-*/
 
 hr, .hr {
     margin: 0;
@@ -230,6 +218,7 @@ hr, .hr {
     //background: $colorGrayLight;
     border: none;
 }
+
 
 
 

@@ -8,6 +8,9 @@
         .footer-part {
             width: 25%;
             padding-right: 70px;
+            @include desktop-smaller {
+                padding-right: 20px;
+            }
         }
         .footer-item {
             display: flex;
@@ -33,6 +36,10 @@
                     font-size: 18px;
                     line-height: 22px;
                     color: $colorText;
+                    @include desktop-smaller {
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
                 }
             }
         }
@@ -114,7 +121,7 @@
         }
         .footer-copy__left {
             display: flex;
-            width: 60%;
+            width: 56%;
             align-items: center;
             justify-content: space-between;
         }

@@ -1,10 +1,13 @@
 import * as $                                from "jquery";
 import { CustomSelect }                      from './components/custom-select';
+import { FeedForm }                          from './components/feed-form';
 import { initMaskedInput, initPlaceholders } from "./components/form";
+import { Header }                            from './components/header';
 import { HeaderMenu }                        from './components/header-menu';
 import { MainPageSlider }                    from './components/main-page-slider';
 import { ModalWindowFullScreen }             from "./components/modal-window-fullscreen";
 import { Preloader }                         from './components/preloader';
+import { CatalogFilter }                     from './components/сatalog-filter';
 window.jQuery = require("jquery");
 
 
@@ -15,6 +18,7 @@ $(function() {
   new Preloader();
 
   // главное меню на мобильном
+  new Header();
   new HeaderMenu();
 
   // инициализация плагина кастомных селектов
@@ -22,6 +26,12 @@ $(function() {
 
   // слайдер товаров на главной
   new MainPageSlider()
+
+  // функционал фильтра каталогов
+  new CatalogFilter()
+
+  // форма подписки на рассылку новостей
+  new FeedForm()
 
   // инициализация функционала модальных окон
   let modal = new ModalWindowFullScreen();

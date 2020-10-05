@@ -60,5 +60,74 @@
         width: 10px;
         height: 10px;
     }
+    .count {
+        display: inline-block;
+        margin-left: 2px;
+        color: $colorBlue;
+    }
 
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(96, 103, 108, 0.1);
+    padding: 15px 0;
+    .item {
+        display: inline-block;
+        position: relative;
+        font-size: 17px;
+        line-height: 29px;
+        color: $colorGray;
+        text-decoration: none;
+    }
+    .item + .item {
+        margin-left: 30px;
+        &:before {
+            position: absolute;
+            top: 13px;
+            left: -15px;
+            width: 3px;
+            height: 3px;
+            content: '';
+            background: $colorGray;
+            border-radius: 50%;
+        }
+    }
+    a.item {
+        @include desktop {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+.title-with-filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .h1 {
+        white-space: nowrap;
+    }
+    .filter-btn {
+        width: 304px;
+    }
+    @include mobile {
+        flex-wrap: wrap;
+        .h1 {
+            white-space: nowrap;
+            margin-bottom: 23px;
+        }
+        .filter-btn {
+            width: 100%;
+        }
+    }
+}
+
+.search-highlight {
+    display: inline-block;
+    background: #F1D693;
 }

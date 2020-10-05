@@ -1,0 +1,59 @@
+.feed-form {
+    position: relative;
+    width: 100%;
+    padding: 30px 37px 30px 165px;
+    background: #ACDBE1;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    .bg {
+        position: absolute;
+        left: 36px;
+        top: 0;
+        width: 146px;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: left center;
+        -webkit-background-size: contain;
+        background-size: contain;
+    }
+    .title {
+        position: relative;
+        font-weight: 800;
+        font-size: 30px;
+        line-height: 39px;
+        color: $colorWhite;
+        text-shadow: 0px 2px 0px rgba(0, 45, 82, 0.3);
+    }
+    .input-text, .button {
+        height: 41px;
+    }
+    .field {
+        margin-left: auto;
+        margin-right: 15px;
+        min-width: 370px;
+        .label {
+            top: 2px;
+            font-size: 12px;
+        }
+        &.empty {
+            .label {
+                font-weight: 800;
+                font-size: 14px;
+                line-height: 17px;
+                color: $colorText;
+                top: 14px;
+            }
+        }
+        .input-text {
+            padding-top: 22px;
+            background: $colorWhite;
+            font-size: 17px;
+        }
+        .error-message {
+            top: 36px;
+        }
+    }
+
+}
