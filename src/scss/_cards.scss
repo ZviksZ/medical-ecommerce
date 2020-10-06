@@ -185,6 +185,13 @@
             width: calc(33.33333333% - 32px);
             &:nth-child(1),
             &:nth-child(2) {
+                width: calc(50% - 32px);
+            }
+        }
+        @include desktop-smaller {
+            width: calc(33.33333333% - 32px);
+            &:nth-child(1),
+            &:nth-child(2) {
                 width: calc(100% - 32px);
             }
         }

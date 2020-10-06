@@ -56,4 +56,51 @@
         }
     }
 
+    @include desktop-smaller {
+        .field {
+            min-width: 320px;
+        }
+    }
+    @include mobile {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 25px 20px;
+        .bg {
+            position: absolute;
+            left: 13px;
+            top: 13px;
+            width: 112px;
+            height: 76px;
+            background-repeat: no-repeat;
+            background-position: left center;
+            -webkit-background-size: contain;
+            background-size: contain;
+        }
+        .title {
+            width: 100%;
+            padding-left: 96px;
+            margin-bottom: 18px;
+            font-size: 20px;
+            line-height: 26px;
+        }
+        .input-text, .button {
+            width: 100%;
+            max-width: 500px;
+            height: 41px;
+            margin-left: 0;
+        }
+        .field {
+            width: 100%;
+            max-width: 500px;
+            min-width: auto;
+            margin: 0 0 18px;
+        }
+    }
+    @include only-mobile {
+        .title {
+            width: 100%;
+            padding-left: 89px;
+        }
+    }
+
 }

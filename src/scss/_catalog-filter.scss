@@ -47,4 +47,20 @@
             color: $colorText;
         }
     }
+    @include mobile {
+        .filter-item {
+            font-size: 18px;
+            line-height: 22px;
+        }
+        .letter-item {
+            padding-top: 1px;
+            .letter {
+                font-size: 16px;
+                line-height: 19px;
+            }
+        }
+        .h1 {
+            margin-bottom: 0;
+        }
+    }
 }

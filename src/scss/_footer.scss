@@ -5,6 +5,12 @@
     .footer-content {
         padding: 44px 0;
         display: flex;
+        @include mobile {
+            padding-bottom: 34px;
+        }
+        @include only-mobile {
+            padding-bottom: 20px;
+        }
         .footer-part {
             width: 25%;
             padding-right: 70px;
