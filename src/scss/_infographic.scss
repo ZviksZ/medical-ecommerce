@@ -12,6 +12,7 @@
         border-radius: 6px;
         border: 2px solid $colorGrayLight;
         cursor: pointer;
+        white-space: nowrap;
         &.disabled {
             opacity: 0.5;
             pointer-events: none;
@@ -67,11 +68,10 @@
     }
 
 }
-
 .breadcrumbs {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    overflow: auto;
     border-bottom: 1px solid rgba(96, 103, 108, 0.1);
     padding: 15px 0;
     .item {
@@ -81,9 +81,10 @@
         line-height: 29px;
         color: $colorGray;
         text-decoration: none;
+        white-space: nowrap;
     }
     .item + .item {
-        margin-left: 30px;
+        margin-left: 29px;
         &:before {
             position: absolute;
             top: 13px;
@@ -103,8 +104,6 @@
         }
     }
 }
-
-
 .title-with-filter {
     display: flex;
     align-items: center;
@@ -126,8 +125,48 @@
         }
     }
 }
-
 .search-highlight {
     display: inline-block;
     background: #F1D693;
+}
+.no-input-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 32px;
+    line-height: 20px;
+    font-size: 17px;
+    color: $colorText;
+    margin-bottom: 20px;
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 1px;
+        width: 18px;
+        height: 18px;
+        border-radius: 4px;
+        background: $colorBlue;
+        border: 1px solid $colorBlue;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        left: 4px;
+        top: 5px;
+        width: 10px;
+        height: 5px;
+        border-radius: 1px;
+        border-left: 3px solid $colorWhite;
+        border-bottom: 3px solid $colorWhite;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        opacity: 1;
+    }
 }

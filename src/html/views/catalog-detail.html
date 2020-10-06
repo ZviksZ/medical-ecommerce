@@ -1,0 +1,190 @@
+<% var data = {
+title: "Каталог-Детальная | Pentcroft",
+header: "blue"
+}; %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
+
+<section class="section no-padding-top catalog-detail">
+    <div class="container">
+        <div class="breadcrumbs">
+            <a href="/" class="item">Главная</a>
+            <a href="/" class="item">Каталог продуктов</a>
+            <span class="item">Ультрафертил плюс</span>
+        </div>
+
+        <div class="cd-top">
+            <div class="cd-slider-wrap">
+                <div class="cd-slider" id="cd-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" >
+                            <div class="item" style="background-image: url(/img/cards/1.png)"></div>
+                        </div>
+                        <div class="swiper-slide" >
+                            <div class="item" style="background-image: url(/img/cards/1.png)"></div>
+                        </div>
+                        <div class="swiper-slide" >
+                            <div class="item" style="background-image: url(/img/cards/1.png)"></div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="cd-top__info" id="catalog">
+                <h1 class="h1 margin-bottom">Ультрафертил плюс</h1>
+                <p class="margin-bottom-x2 color-gray">Рекомендуется в качестве биологически активной добавки к пище - источника L-карнитина в качестве биологически активной добавки к пище</p>
+                <div class="tabs margin-bottom-x2">
+                    <div class="item disabled">Small</div>
+                    <div class="item active">Medium</div>
+                    <div class="item">Large</div>
+                    <div class="item">Extralarge</div>
+                </div>
+                <div class="margin-bottom-x2 margin-top-x2">
+                    <select name="" class="custom-select" id="">
+                        <option value="1">100 мл.</option>
+                        <option value="2">200 мл.</option>
+                        <option value="3">300 мл.</option>
+                        <option value="4">400 мл.</option>
+                    </select>
+                </div>
+
+                <div class="display-flex align-item-center">
+                    <button class="button">Заказать</button>
+                    <button class="button blue with-icon margin-left-x2">
+                        <span>Интернет-магазин</span>
+                        <img src="/img/link-icon.svg" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cd-content">
+            <div class="tabs margin-bottom-x2">
+                <div class="item active">Информация</div>
+                <div class="item">Инструкция по применению</div>
+                <div class="item">Статьи</div>
+                <div class="item">Видео</div>
+                <div class="item">Клинические рекомендации</div>
+                <div class="item">Семинары</div>
+            </div>
+            <div class="block-tab" data-tab="1">
+                <h3 class="h3 margin-bottom-x2">Описание</h3>
+
+                <div class="cd-content__info">
+                    <div class="cd-content__text">
+                        <h5 class="h5">Что такое EmbaGYN ™</h5>
+                        <p>
+                            EmbaGYN - это медицинский прибор, предназначенный для реабилитации и укрепления мышц  тазового дна. Он эффективен при стрессовом, ургентном и смешанном типах недержания мочи. Это удобное, доступное, надежное и эффективное решение проблемы недержания мочи. Тренировка мышц способствует улучшению здоровья органов малого таза и усилению контроля за недержанием.
+                        </p>
+                        <h5 class="h5">Как работает EmbaGYN?</h5>
+                        <p>
+                            Тренажер мышц тазового дна EmbaGYN состоит из небольшого пульта управления и вагинального электрода. Во время его работы происходит мягкая электрическая стимуляция мышц. Прибор посылает мягкий электрический импульс через вагинальный электрод, заставляя сокращаться и укрепляться мышцы тазового дна. Для улучшения результатов EmbaGYN рекомендуется использовать вместе с упражнениями Кегеля.
+                        </p>
+                    </div>
+                    <div class="img" style="background-image: url(/img/catalog/1.jpg)"></div>
+                </div>
+                <div class="cd-content__info">
+                    <div class="img" style="background-image: url(/img/catalog/2.jpg)"></div>
+                    <div class="cd-content__text">
+                        <h5 class="h5">Что такое EmbaGYN ™</h5>
+                        <p>
+                            EmbaGYN - это медицинский прибор, предназначенный для реабилитации и укрепления мышц  тазового дна. Он эффективен при стрессовом, ургентном и смешанном типах недержания мочи. Это удобное, доступное, надежное и эффективное решение проблемы недержания мочи. Тренировка мышц способствует улучшению здоровья органов малого таза и усилению контроля за недержанием.
+                        </p>
+                        <h5 class="h5">Как работает EmbaGYN?</h5>
+                        <p>
+                            Тренажер мышц тазового дна EmbaGYN состоит из небольшого пульта управления и вагинального электрода. Во время его работы происходит мягкая электрическая стимуляция мышц. Прибор посылает мягкий электрический импульс через вагинальный электрод, заставляя сокращаться и укрепляться мышцы тазового дна. Для улучшения результатов EmbaGYN рекомендуется использовать вместе с упражнениями Кегеля.
+                        </p>
+                    </div>
+                </div>
+
+                <h3 class="h3">Преимущества</h3>
+
+                <div class="cd-advantages">
+                    <div class="item">
+                        <div class="top">
+                            <img src="/img/catalog/adv-1.svg" alt="">
+                            <div class="h5">Интенсивность стимуляции увеличивается постепенно</div>
+                        </div>
+                        <p>
+                            Процесс под вашим контролем вызывает комфортные ощущения. При нажатии всего одной кнопки восстанавливается 50% мощности.
+                        </p>
+                    </div>
+                    <div class="item">
+                        <div class="top">
+                            <img src="/img/catalog/adv-2.svg" alt="">
+                            <div class="h5">Легко начать– память с одного нажатия</div>
+                        </div>
+                        <p>
+                            Память EmbaGYN™ обеспечивает запоминание последней использованной программы и заданной мощности.
+                        </p>
+                    </div>
+                    <div class="item">
+                        <div class="top">
+                            <img src="/img/catalog/adv-3.svg" alt="">
+                            <div class="h5">Память пользователя и запись данных</div>
+                        </div>
+                        <p>
+                            Он показывает время, которое прибор находился в действии, а также средний уровень использованной мощности.
+                        </p>
+                    </div>
+                    <div class="item">
+                        <div class="top">
+                            <img src="/img/catalog/adv-4.svg" alt="">
+                            <div class="h5">Безопасное автоматическое отключение</div>
+                        </div>
+                        <p>
+                            Длительность сеанса по умолчанию ограничена двадцатью минутами, по истечению которых устройство автоматически выключается.
+                        </p>
+                    </div>
+                </div>
+                <h3 class="h3 margin-bottom-x2">Нозологии</h3>
+
+                <div class="cd-sickness__list">
+                    <div class="no-input-checkbox">
+                        <span>Хронический простатит</span>
+                    </div>
+                    <div class="no-input-checkbox">
+                        <span>Хронический простатит</span>
+                    </div>
+                    <div class="no-input-checkbox">
+                        <span>Хронический простатит</span>
+                    </div>
+                    <div class="no-input-checkbox">
+                        <span>Хронический простатит</span>
+                    </div>
+                    <div class="no-input-checkbox">
+                        <span>Хронический эндометит</span>
+                    </div>
+                    <div class="no-input-checkbox">
+                        <span>Хронический эндометит</span>
+                    </div>
+                    <div class="no-input-checkbox">
+                        <span>Хронический эндометит</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</section>
+<section class="section no-padding-top">
+    <div class="container">
+        <form class="feed-form" id="feed_form">
+            <div class="bg" style="background-image: url(/img/feed-form-bg.jpg)"></div>
+            <div class="title">Подписаться на рассылку новостей</div>
+
+            <label class="field field-input item">
+                <input class="input-text placeholder validate" data-validate="email-required" placeholder="email@test.ru" data-placeholder="Адрес электронной почты"
+                       name="filter-search" id="feed-follow-input" type="text">
+                <p class="error-message"></p>
+            </label>
+
+            <button class="button small dark-blue" id="feed-follow-button">Подписаться</button>
+        </form>
+    </div>
+</section>
+
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>

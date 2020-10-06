@@ -1,4 +1,5 @@
 import * as $                                from "jquery";
+import { CatalogDetailSlider }               from './components/catalog-detail';
 import { CustomSelect }                      from './components/custom-select';
 import { FeedForm }                          from './components/feed-form';
 import { initMaskedInput, initPlaceholders } from "./components/form";
@@ -29,6 +30,9 @@ $(function() {
 
   // функционал фильтра каталогов
   new CatalogFilter()
+
+  // детальная страница каталога
+  new CatalogDetailSlider()
 
   // форма подписки на рассылку новостей
   new FeedForm()
