@@ -1,14 +1,15 @@
-import * as $                                from "jquery";
-import { CatalogDetailSlider }               from './components/catalog-detail';
-import { CustomSelect }                      from './components/custom-select';
-import { FeedForm }                          from './components/feed-form';
-import { initMaskedInput, initPlaceholders } from "./components/form";
-import { Header }                            from './components/header';
+import * as $                                      from "jquery";
+import { CatalogDetailOrder, CatalogDetailSlider } from './components/catalog-detail';
+import { CatalogFilter }                           from './components/catalog-filter';
+import { CustomSelect }                            from './components/custom-select';
+import { CustomTabs }                              from './components/custom-tabs';
+import { FeedForm }                                from './components/feed-form';
+import { initMaskedInput, initPlaceholders }       from "./components/form";
+import { Header }                                  from './components/header';
 import { HeaderMenu }                        from './components/header-menu';
 import { MainPageSlider }                    from './components/main-page-slider';
 import { ModalWindowFullScreen }             from "./components/modal-window-fullscreen";
 import { Preloader }                         from './components/preloader';
-import { CatalogFilter }                     from './components/сatalog-filter';
 window.jQuery = require("jquery");
 
 
@@ -25,6 +26,9 @@ $(function() {
   // инициализация плагина кастомных селектов
   new CustomSelect()
 
+  // функционал табов
+  new CustomTabs()
+
   // слайдер товаров на главной
   new MainPageSlider()
 
@@ -33,6 +37,7 @@ $(function() {
 
   // детальная страница каталога
   new CatalogDetailSlider()
+  new CatalogDetailOrder()
 
   // форма подписки на рассылку новостей
   new FeedForm()

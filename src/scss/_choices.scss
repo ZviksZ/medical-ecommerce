@@ -113,7 +113,9 @@
         .choices__list {
             max-height: 240px;
         }
-
+        .choices__item + .choices__item {
+            border-top: 1px solid $colorBg;
+        }
     }
 
     .choices__list--dropdown .choices__item--selectable {

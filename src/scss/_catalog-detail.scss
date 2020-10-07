@@ -15,6 +15,12 @@
                     border: 1px solid #EFF0F0;
                     box-sizing: border-box;
                     border-radius: 6px;
+                    @include mobile {
+                        padding: 35px 0;
+                    }
+                    @include only-mobile {
+                        padding: 20px 0;
+                    }
                     .item {
                         display: flex;
                         background-repeat: no-repeat;
@@ -97,6 +103,12 @@
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 64px;
+            @include mobile {
+                margin-bottom: 48px;
+            }
+            @include only-mobile {
+                margin-bottom: 32px;
+            }
             .img {
                 display: flex;
                 width: 49%;
@@ -161,31 +173,53 @@
                 .top {
                     display: flex;
                     align-items: flex-start;
-                    margin-bottom: 14px;
+                    height: 78px;
+                    overflow: hidden;
                     img {
                         display: block;
                         width: 60px;
                         min-width: 60px;
                         margin-right: 22px;
                     }
+                    @include desktop-medium {
+                        .h5 {
+                            line-height: 20px;
+                        }
+                    }
+                    @include desktop-small {
+                        img {
+                            margin-right: 15px;
+                        }
+                        .h5 {
+                            font-size: 16px;
+                            line-height: 19px;
+                        }
+                    }
+                    @include desktop-smaller {
+                        height: 70px;
+                    }
+                    @include only-mobile {
+                        height: auto;
+                    }
                 }
                 p {
-                    margin-top: auto;
+                    margin-top: 14px;
                     color: $colorGray;
                 }
             }
         }
         .cd-sickness__list {
-            list-style-position: inside;
-            -moz-column-count: 2;
-            -webkit-column-count: 2;
-            column-count: 2;
-            list-style-type: decimal;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            .no-input-checkbox {
+                width: 48%;
+            }
             @include only-mobile {
-                -moz-column-count: 1;
-                -webkit-column-count: 1;
-                column-count: 1;
-                margin-bottom: 25px;
+                .no-input-checkbox {
+                    width: 100%;
+                }
             }
         }
     }

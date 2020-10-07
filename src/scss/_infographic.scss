@@ -170,3 +170,10 @@
         opacity: 1;
     }
 }
+
+.tab-block {
+    display: none;
+    &.active {
+        display: block;
+    }
+}
