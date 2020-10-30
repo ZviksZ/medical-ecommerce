@@ -3,6 +3,9 @@
     align-items: center;
     flex-wrap: wrap;
     margin: 52px -16px 0;
+    @include mobile {
+        margin: 25px -16px 0;
+    }
     .item {
         position: relative;
         width: calc(16.6666666666% - 32px);

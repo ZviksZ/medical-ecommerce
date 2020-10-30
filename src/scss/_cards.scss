@@ -3,6 +3,9 @@
     .swiper-slide {
         width: 256px !important;
     }
+    @include mobile {
+        margin-top: 25px;
+    }
 }
 .card-item {
     position: relative;
