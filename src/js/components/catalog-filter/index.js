@@ -1,5 +1,5 @@
 import * as $ from 'jquery';
-import { highlightSomeText } from '../helpers';
+import { declOfNum, highlightSomeText } from '../helpers';
 import { getCatalog } from './catalog-mock.js';
 
 export class CatalogFilter {
@@ -14,6 +14,11 @@ export class CatalogFilter {
       this.$form = $('#catalog-filter-form');
       this.$catalogTitle = $('#catalog-filter-title');
       this.$catalogFilterOpen = $('#catalog-filter-open');
+      this.$catalogFilterBtn = $('#catalog-filter-btn');
+      this.$catalogFilterText = $('#catalog-filter-text');
+      this.$catalogClearSearch = $('#clear-catalog-search');
+
+      this.isItFirstTouch = true;
 
       this.init();
    }
@@ -21,6 +26,8 @@ export class CatalogFilter {
    init = () => {
       this.$filter.find('#catalog-filter-search').on('input', this.catalogSearchInput);
       this.$filter.find('input[type="checkbox"]').on('change', this.catalogCheckboxChange);
+      this.$catalogFilterBtn.on('click', this.setCatalogData);
+      this.$catalogClearSearch.on('click', this.clearSearch);
    };
 
    catalogCheckboxChange = e => {
@@ -30,6 +37,16 @@ export class CatalogFilter {
          this.$filter.find('#catalog-categories-list input').each((index, item) => {
             $(item).prop('checked', isChecked);
          });
+      } else {
+         if (this.isItFirstTouch) {
+            this.$filter.find('#catalog-categories-list input').each((index, item) => {
+               $(item).prop('checked', false);
+            });
+
+            $(e.currentTarget).prop('checked', true);
+
+            this.isItFirstTouch = false;
+         }
       }
 
       this.getCatalogItems();
@@ -62,7 +79,21 @@ export class CatalogFilter {
    catalogSearchInput = e => {
       let query = $(e.currentTarget).val();
 
+      if (query.length > 0) {
+         this.$catalogClearSearch.addClass('show');
+      } else {
+         this.$catalogClearSearch.removeClass('show');
+      }
+
       this.catalogSearch(query);
+   };
+
+   clearSearch = () => {
+      this.$filter.find('#catalog-filter-search').val('');
+
+      this.catalogSearch('');
+
+      this.$catalogClearSearch.removeClass('show');
    };
 
    catalogSearch = query => {
@@ -97,14 +128,22 @@ export class CatalogFilter {
             method: 'POST',
             body: data
          });
+         this.catalogData = getCatalog;
 
-         this.setCatalogData(getCatalog);
+         if (this.catalogData.length) {
+            this.$catalogFilterBtn.removeClass('hide').text('Показать ' + this.catalogData.length + ' ' + declOfNum(this.catalogData.length, ['продукт', 'продукта', 'продуктов']));
+            this.$catalogFilterText.addClass('hide');
+         } else {
+            this.$catalogFilterBtn.addClass('hide');
+            this.$catalogFilterText.removeClass('hide');
+         }
       } catch (e) {
-         this.setCatalogData(getCatalog);
+         //this.setCatalogData();
       }
    };
 
-   setCatalogData = data => {
+   setCatalogData = () => {
+      let data = this.catalogData;
       let template = ``;
 
       for (let i = 0; i < data.length; i++) {
@@ -116,8 +155,6 @@ export class CatalogFilter {
       } else {
          this.$catalogList.html(`<p class="text-align-center margin-top-x3">По вашему фильтру ничего не найдено</p>`);
       }
-
-
    };
 
    getItemTemplate = item => {

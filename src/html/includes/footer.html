@@ -81,7 +81,7 @@
 
 
             <a href="https://internetlab.ru/" class="lab">
-                <img src="/img/footer/internetlab.svg" alt="">
+                <img src="./img/footer/internetlab.svg" alt="">
             </a>
         </div>
     </div>
@@ -101,12 +101,13 @@
                 </h1>
                 <a href="#" class="close" data-close-modal-button="catalog-modal" data-effect-type="open-modal-fade-effect"><i class="icon-cancel"></i></a>
             </div>
-            <div class="margin-top-x2">
+            <div class="filter-search-block margin-top-x2">
                 <label class="field field-input item with-search-icon">
                     <input class="input-text placeholder" placeholder="Введите категорию" data-placeholder="Поиск по нозологиям"
                            name="filter-search" id="catalog-filter-search" type="text">
                     <p class="error-message"></p>
                 </label>
+                <span id="clear-catalog-search" class="filter-clear-search">Отмена</span>
             </div>
 
             <div class="filter-item filter-item__main">
@@ -173,6 +174,10 @@
                             </label>
                         </div>
                     </div>
+                </div>
+                <div class="text-align-center">
+                    <div class="button hide" id="catalog-filter-btn" data-close-modal-button="catalog-modal" data-effect-type="open-modal-fade-effect">Показать </div>
+                    <p id="catalog-filter-text" class="hide">Ничего не найдено</p>
                 </div>
             </form>
         </div>

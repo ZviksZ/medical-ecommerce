@@ -7,6 +7,9 @@
         height: auto;
         min-height: 100vh;
     }
+    @media screen and (min-width: 1000px) and (orientation: portrait) {
+        height: auto;
+    }
     .bg {
         position: absolute;
         top: 0;

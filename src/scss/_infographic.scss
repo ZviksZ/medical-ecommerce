@@ -18,7 +18,9 @@
             pointer-events: none;
         }
         &.active {
-            border: 2px solid $colorBlue;
+            border: 2px solid $colorBlue !important;
+            background: $colorBlue !important;
+            color: $colorWhite !important;
         }
         @include desktop {
             &:hover {
@@ -74,6 +76,9 @@
     overflow: auto;
     border-bottom: 1px solid rgba(96, 103, 108, 0.1);
     padding: 15px 0;
+    @include desktop-small {
+        padding: 5px 0;
+    }
     .item {
         display: inline-block;
         position: relative;
@@ -113,6 +118,9 @@
     }
     .filter-btn {
         width: 304px;
+    }
+    @include desktop-small {
+        margin-top: 15px !important;
     }
     @include mobile {
         flex-wrap: wrap;

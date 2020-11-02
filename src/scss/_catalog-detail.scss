@@ -2,6 +2,9 @@
     .cd-top {
         display: flex;
         padding-top: 50px;
+        @include desktop-small {
+            padding-top: 15px;
+        }
         .choices-custom {
             width: auto;
             max-width: 50%;
@@ -9,6 +12,10 @@
         .cd-slider-wrap {
             width: 50%;
             overflow: hidden;
+            margin-bottom: 25px;
+            @include desktop-small {
+                width: 30%;
+            }
             .cd-slider {
                 .swiper-slide {
                     padding: 50px 0;
@@ -62,6 +69,18 @@
         .cd-top__info {
             width: 50%;
             padding-left: 32px;
+            margin-bottom: 25px;
+            @include desktop-small {
+                width: 70%;
+                p.margin-bottom-x2 {
+                    margin-bottom: 15px;
+                }
+                .button {
+                    padding: 14px 24px;
+                    font-size: 17px;
+                    line-height: 29px;
+                }
+            }
         }
 
         @include desktop-smaller {
@@ -131,6 +150,7 @@
                     margin-bottom: 14px;
                 }
                 p {
+                    color: $colorGray;
                     margin-bottom: 29px;
                 }
             }

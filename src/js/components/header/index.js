@@ -36,7 +36,7 @@ export class Header {
                 this.$header.addClass('no-fixed');
                 this.lastScrollDownPosition = st;
             } else {
-                if (this.scrollPosition < (this.lastScrollDownPosition - 100)) {
+                if (this.scrollPosition < (this.lastScrollDownPosition - 100) || st < 100) {
                     this.$header.removeClass('no-fixed');
                 }
 

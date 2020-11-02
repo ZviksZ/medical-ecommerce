@@ -20,6 +20,10 @@ h1, .h1 {
     font-size: 58px;
     line-height: 75px;
     color: $colorText;
+    @include desktop-small {
+        font-size: 38px;
+        line-height: 45px;
+    }
     @include mobile {
         font-size: 28px;
         line-height: 36px;
