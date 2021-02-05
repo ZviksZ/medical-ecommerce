@@ -20,7 +20,6 @@ export class MainPageSlider {
          loop: false,
          preloadImages: false,
          lazy: true,
-         resistance: false,
          slidesPerView: 'auto',
          spaceBetween: 32,
          freeMode: true,
