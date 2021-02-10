@@ -97,9 +97,9 @@ export class CatalogFilter {
    };
 
    catalogSearch = query => {
-      this.$catalogFilterList.find('.letter-item').addClass('hide');
+      this.$catalogFilterList.find('.letter-item .filter-item').addClass('hide');
 
-      this.$catalogFilterList.find('.letter-item').each((_, item) => {
+      this.$catalogFilterList.find('.letter-item .filter-item').each((_, item) => {
          let text = $(item)
             .text()
             .toLowerCase();
@@ -124,11 +124,11 @@ export class CatalogFilter {
       let data = this.$form.serialize();
 
       try {
-         let response = await fetch('/getCatalog', {
+         let response = await fetch('/getCatalog/', {
             method: 'POST',
             body: data
          });
-         this.catalogData = getCatalog;
+         this.catalogData = response;
 
          if (this.catalogData.length) {
             this.$catalogFilterBtn.removeClass('hide').text('Показать ' + this.catalogData.length + ' ' + declOfNum(this.catalogData.length, ['продукт', 'продукта', 'продуктов']));
