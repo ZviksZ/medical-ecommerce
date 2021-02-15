@@ -1,0 +1,82 @@
+<% var data = {
+title: "Контакты | Pentcroft",
+header: "blue"
+}; %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
+
+
+<section class="section section-bg no-padding-vertical">
+    <div class="container">
+        <div class="breadcrumbs">
+            <a href="/" class="item">Главная</a>
+            <span class="item">Контакты</span>
+        </div>
+
+        <div class="title-with-filter margin-top-x2">
+            <h1 class="h1">Контакты</h1>
+        </div>
+
+        <div class="contacts">
+            <div id="map" class="contacts__map" data-coords="55.787757,37.635956">
+
+            </div>
+            <div class="contacts__info">
+                <div class="contacts__info-title">ЗАО «ПЕНТКРОФТ ФАРМА»</div>
+
+                <div class="contacts__info-block">
+                    <div class="contacts__info-subtitle">Адрес офиса</div>
+                    <div class="contacts__info-link">
+                        <i class="icon-location"></i>
+                        <span>129110, Москва, Проспект Мира д. 68, стр. 2, оф. 321
+</span>
+                    </div>
+                </div>
+
+                <div class="contacts__info-block">
+                    <div class="contacts__info-subtitle">Электронная почта</div>
+                    <a href="mailto:pentcroft@mail.ru" class="contacts__info-link">
+                        <i class="icon-mail"></i>
+                        <span>pentcroft@mail.ru
+</span>
+                    </a>
+                </div>
+
+                <div class="contacts__info-block">
+                    <div class="contacts__info-subtitle">Многоканальный телефон</div>
+                    <a href="tel:+7 (495) 507-86-50" class="contacts__info-link">
+                        <i class="icon-call"></i>
+                        <span>+7 (495) 507-86-50</span>
+                    </a>
+                </div>
+
+                <div class="contacts__info-block">
+                    <a href="#" class="contacts__info-link--download" download target="_blank">
+                        Как пройти? Скачать подробную инструкцию.
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section section-bg no-padding-top">
+    <div class="container">
+        <form class="feed-form" id="feed_form">
+            <div class="bg" style="background-image: url(./img/feed-form-bg.jpg)"></div>
+            <div class="title">Подписаться на рассылку новостей</div>
+
+            <label class="field field-input item">
+                <input class="input-text placeholder validate" data-validate="email-required" placeholder="email@test.ru" data-placeholder="Адрес электронной почты"
+                       name="filter-search" id="feed-follow-input" type="text">
+                <p class="error-message"></p>
+            </label>
+
+            <button class="button small dark-blue" id="feed-follow-button">Подписаться</button>
+        </form>
+    </div>
+</section>
+
+
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>

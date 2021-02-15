@@ -1,51 +1,53 @@
-import * as $                                      from "jquery";
+import * as $ from 'jquery';
 import { CatalogDetailOrder, CatalogDetailSlider } from './components/catalog-detail';
-import { CatalogFilter }                           from './components/catalog-filter';
-import { CustomSelect }                            from './components/custom-select';
-import { CustomTabs }                              from './components/custom-tabs';
-import { FeedForm }                                from './components/feed-form';
-import { initMaskedInput, initPlaceholders }       from "./components/form";
-import { Header }                                  from './components/header';
+import { CatalogFilter } from './components/catalog-filter';
+import { CustomSelect }                      from './components/custom-select';
+import { CustomTabs }                        from './components/custom-tabs';
+import { FeedForm }                          from './components/feed-form';
+import { initMaskedInput, initPlaceholders } from './components/form';
+import { Header }                            from './components/header';
 import { HeaderMenu }                        from './components/header-menu';
 import { MainPageSlider }                    from './components/main-page-slider';
-import { ModalWindowFullScreen }             from "./components/modal-window-fullscreen";
+import { InitMap }                           from './components/map';
+import { ModalWindowFullScreen }             from './components/modal-window-fullscreen';
 import { Preloader }                         from './components/preloader';
-window.jQuery = require("jquery");
-
-
-
+import { Search }                            from './components/search';
+window.jQuery = require('jquery');
 
 $(function() {
-  // прелоадер при загрузке главной
-  new Preloader();
+   // прелоадер при загрузке главной
+   new Preloader();
 
-  // главное меню на мобильном
-  new Header();
-  new HeaderMenu();
+   // главное меню на мобильном
+   new Header();
+   new HeaderMenu();
 
-  // инициализация плагина кастомных селектов
-  new CustomSelect()
+   // инициализация плагина кастомных селектов
+   new CustomSelect();
 
-  // функционал табов
-  new CustomTabs()
+   // функционал табов
+   new CustomTabs();
 
-  // слайдер товаров на главной
-  new MainPageSlider()
+   // слайдер товаров на главной
+   new MainPageSlider();
 
-  // функционал фильтра каталогов
-  new CatalogFilter()
+   // функционал фильтра каталогов
+   new CatalogFilter();
 
-  // детальная страница каталога
-  new CatalogDetailSlider()
-  new CatalogDetailOrder()
+   // детальная страница каталога
+   new CatalogDetailSlider();
+   new CatalogDetailOrder();
 
-  // форма подписки на рассылку новостей
-  new FeedForm()
+   new InitMap();
+   new Search();
 
-  // инициализация функционала модальных окон
-  let modal = new ModalWindowFullScreen();
+   // форма подписки на рассылку новостей
+   new FeedForm();
 
-  // Инициализация плейсхолдеров и масок
-  initMaskedInput();
-  initPlaceholders();
+   // инициализация функционала модальных окон
+   let modal = new ModalWindowFullScreen();
+
+   // Инициализация плейсхолдеров и масок
+   initMaskedInput();
+   initPlaceholders();
 });

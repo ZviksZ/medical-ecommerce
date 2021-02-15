@@ -3,15 +3,16 @@ import * as $ from 'jquery';
 export class Header {
     constructor() {
         this.$header = $('#header');
+        this.$headerMargin = $('.header-margin');
         this.headerClassName = 'header-color';
-        this.scrollPosition = 0;
+        this.scrollPosition = 141;
         this.lastScrollDownPosition = 0;
 
         this.init();
     }
 
     init = () => {
-        if (pageYOffset > 0) {
+        if (pageYOffset > 141) {
             this.$header.addClass(this.headerClassName);
         } else {
             this.$header.removeClass(this.headerClassName);
@@ -23,7 +24,7 @@ export class Header {
     refreshStateHeader = (e) => {
         let $this = $(e.currentTarget);
 
-        if (pageYOffset > 0) {
+        if (pageYOffset > 141) {
             this.$header.addClass(this.headerClassName);
         } else {
             this.$header.removeClass(this.headerClassName);
@@ -33,8 +34,13 @@ export class Header {
             let st = $this.scrollTop();
 
             if (st > this.scrollPosition){
-                this.$header.addClass('no-fixed');
+                if (st > 140) {
+                    this.$header.addClass('no-fixed');
+                } else {
+                    this.$header.removeClass('no-fixed');
+                }
                 this.lastScrollDownPosition = st;
+
             } else {
                 if (this.scrollPosition < (this.lastScrollDownPosition - 100) || st < 100) {
                     this.$header.removeClass('no-fixed');

@@ -18,6 +18,9 @@ export class CatalogFilter {
       this.$catalogFilterText = $('#catalog-filter-text');
       this.$catalogClearSearch = $('#clear-catalog-search');
 
+
+      this.catalogType = $('#catalogType').val();
+
       this.isItFirstTouch = true;
 
       this.init();
@@ -121,14 +124,29 @@ export class CatalogFilter {
    };
 
    getCatalogItems = async () => {
-      let data = this.$form.serialize();
+      const checkedIds = []
+
+      this.$form.find('input').each((index, item) => {
+         const isChecked = $(item).prop('checked')
+         const id = $(item).attr('id')
+         if (isChecked) {
+            checkedIds.push(id)
+         }
+      });
 
       try {
-         let response = await fetch('/getCatalog/', {
+         this.catalogData = await fetch('/getCatalog/', {
+            headers: {
+               Accept: 'application/json',
+               'Content-Type': 'application/json'
+            },
             method: 'POST',
-            body: data
-         });
-         this.catalogData = response;
+            body: JSON.stringify({
+               ids: checkedIds,
+               type: this.catalogType
+            })
+         }).then((res) => res.json())
+            .catch((err) => this.onError());
 
          if (this.catalogData.length) {
             this.$catalogFilterBtn.removeClass('hide').text('Показать ' + this.catalogData.length + ' ' + declOfNum(this.catalogData.length, ['продукт', 'продукта', 'продуктов']));

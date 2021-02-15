@@ -3,6 +3,7 @@
         margin: 0 !important;
         max-width: 100%;
         overflow: auto;
+        padding-bottom: 50px;
         &::-webkit-scrollbar { width: 0; }
         & { -ms-overflow-style: none; }
         & { overflow: -moz-scrollbars-none; }
@@ -23,6 +24,12 @@
             line-height: 32px;
             color: $colorText;
             cursor: pointer;
+
+            @include mobile {
+                font-size: 15px;
+                line-height: 26px;
+                margin-left: 12px;
+            }
             &.show {
                 display: inline-block;
             }
