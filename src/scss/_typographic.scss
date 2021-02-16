@@ -7,9 +7,11 @@
     margin: 0;
     padding: 52px 0;
     overflow: hidden;
+
     &.section-bg {
         background: $colorBg;
     }
+
     @include mobile {
         padding: 20px 0;
     }
@@ -41,26 +43,25 @@ h3, .h3 {
     }
 }
 
+
 h5, .h5 {
-    font-weight: bold;
-    font-size: 17px;
-    line-height: 29px;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 31px;
     color: $colorText;
 }
-
 
 
 p {
     font-size: 17px;
     line-height: 29px;
-    color: $colorText;
+    color: $colorGray;
+
     .small-text {
         font-size: 14px;
         line-height: 20px;
     }
 }
-
-
 
 
 a {
@@ -83,12 +84,43 @@ a {
     }
 }
 
+ul {
+    li {
+        position: relative;
+        padding-left: 28px;
+        list-style: none;
+        font-size: 17px;
+        line-height: 20px;
+        color: $colorGray;
+
+        &:before {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            display: block;
+            content: '';
+            width: 7px;
+            height: 7px;
+            border: 3px solid $colorBlue;
+            border-radius: 50%;
+            background-color: transparent;
+        }
+    }
+
+    li + li {
+        margin-top: 30px;
+    }
+}
+
+
 .bold-text {
     font-weight: 600 !important;
 }
+
 .normal-text {
     font-weight: normal !important;
 }
+
 .text-uppercase {
     text-transform: uppercase !important;
 }
@@ -97,8 +129,10 @@ a {
     display: flex;
     align-items: center;
 }
+
 .flex-wrap {
     flex-wrap: wrap;
+
     & > div, & > p {
         width: 100%;
     }

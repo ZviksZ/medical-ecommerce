@@ -107,7 +107,7 @@
                 .img {
                     position: absolute;
                     left: 25px;
-                    top: 10px;
+                    top: 0;
                     width: 100%;
                     height: 100%;
                     background-repeat: no-repeat;
@@ -115,9 +115,9 @@
                     -webkit-background-size: contain;
                     background-size: contain;
                     opacity: 0;
-                    transition: 0.8s;
+                    transition: 0.4s;
                     transition-delay: 1.3s;
-                    transform: translateX(50px);
+                    transform: translateX(0) translateY(10px);
                 }
                 .text {
                     display: inline-block;
@@ -133,7 +133,7 @@
                     color: #418293;
                     opacity: 0;
                     transition: 0.8s;
-                    transition-delay: 1.3s;
+                    transition-delay: 0s;
                     transform: translateX(50px);
                 }
                 @include desktop {
@@ -142,7 +142,7 @@
                             padding: 18px 35px;
                         }
                         .img {
-                            transform: translateX(-25px);
+                            transform: translateX(-25px) translateY(10px);
                         }
                     }
                 }
@@ -268,9 +268,14 @@
             .card {
                 opacity: 1;
                 transform: translateX(0);
-                .img, .text {
+                .text {
                     opacity: 1;
-                    transform: translateX(0);
+                    transform: translateX(0) ;
+                }
+
+                .img {
+                    opacity: 1;
+                    transform:  translateX(0) translateY(10px);
                 }
             }
         }

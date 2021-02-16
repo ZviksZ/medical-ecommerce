@@ -1,0 +1,193 @@
+.about {
+    .about-banner {
+        width: 100%;
+        background: linear-gradient(254.13deg, #BCD1E3 0%, #D7EDFF 100%);
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 111px;
+        margin: 32px 0;
+
+        .about-banner__text {
+            flex: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-size: 34px;
+            line-height: 50px;
+            color: $colorText;
+            padding: 75px 0;
+        }
+
+        .about-banner__img {
+            flex: 45%;
+            height: auto;
+            margin-left: 15px;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            -webkit-background-size: contain;
+            background-size: contain;
+        }
+
+        @include desktop-small {
+            padding: 0 50px;
+
+            .about-banner__text {
+                font-size: 30px;
+                line-height: 45px;
+            }
+
+            .about-banner__img {
+                flex: 35%;
+            }
+        }
+
+        @include desktop-smaller {
+            padding: 0 25px;
+
+            .about-banner__text {
+                font-size: 27px;
+                line-height: 38px;
+            }
+        }
+
+        @include mobile {
+            padding: 0 25px;
+            flex-wrap: wrap;
+
+            .about-banner__text {
+                flex: 100%;
+                font-size: 27px;
+                line-height: 38px;
+                padding: 35px 0;
+            }
+
+            .about-banner__img {
+                flex: 100%;
+                margin-left: 0;
+                height: 250px;
+            }
+        }
+
+        @include only-mobile {
+            .about-banner__text {
+                font-size: 22px;
+                line-height: 30px;
+                padding: 20px 0;
+            }
+
+            .about-banner__img {
+                height: 150px;
+            }
+        }
+    }
+
+    .about-list {
+        margin: 32px 0;
+
+        .about-list__item {
+            background: #F1F3F5;
+            border-radius: 16px;
+            padding: 28px;
+            display: flex;
+            align-items: flex-start;
+            transition: 0.2s ease;
+
+            @include desktop {
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+
+            .about-list__img {
+                width: 251px;
+                min-width: 251px;
+                height: 169px;
+                background-repeat: no-repeat;
+                background-position: center center;
+                -webkit-background-size: cover;
+                background-size: cover;
+                margin-right: 30px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .about-list__img-video {
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: $colorBlue;
+                    border-radius: 50%;
+                    padding-left: 3px;
+
+                    img {
+                        width: 16px;
+                    }
+                }
+            }
+
+            .about-list__info {
+                .about-list__date {
+                    font-size: 13px;
+                    line-height: 22px;
+                    letter-spacing: 0.02em;
+                    text-transform: uppercase;
+                    color: $colorGray;
+                    margin-bottom: 12px;
+                }
+
+                .about-list__text {
+                    font-size: 17px;
+                    line-height: 29px;
+                    color: $colorText;
+                }
+            }
+
+            @include only-mobile {
+                flex-wrap: wrap;
+                padding: 17px;
+
+                .about-list__img {
+                    width: 100%;
+                    min-width: 100%;
+                    height: auto;
+                    margin-right: 0;
+
+                    &:before {
+                        display: block;
+                        float: left;
+                        content: '';
+                        padding-top: 67%;
+                    }
+
+                    .about-list__img-video {
+                        width: 60px;
+                        height: 60px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: $colorBlue;
+                        border-radius: 50%;
+                        padding-left: 3px;
+
+                        img {
+                            width: 16px;
+                        }
+                    }
+                }
+
+                .about-list__info {
+                    width: 100%;
+                    margin-top: 32px;
+                }
+            }
+        }
+
+        .about-list__item + .about-list__item {
+            margin-top: 32px;
+        }
+    }
+}
