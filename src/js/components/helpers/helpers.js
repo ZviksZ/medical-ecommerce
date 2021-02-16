@@ -315,6 +315,29 @@ function transformDate(date, type, localTimezone) {
    return dateResult;
 }
 
+let scrollPositionLock = 0;
+
+function lockBodyOnModalOpen(isOpen) {
+   const $body = document.querySelector('body');
+   const $bodyTop = $body.dataset.top;
+
+   if (isOpen) {
+      scrollPositionLock = $bodyTop ? +$bodyTop : window.pageYOffset;
+      $body.style.overflow = 'hidden';
+      $body.style.position = 'fixed';
+      $body.style.top = `-${scrollPositionLock}px`;
+      $body.style.width = '100%';
+      $body.dataset.top = `${scrollPositionLock}`
+   } else {
+      $body.style.removeProperty('overflow');
+      $body.style.removeProperty('position');
+      $body.style.removeProperty('top');
+      $body.style.removeProperty('width');
+      $body.dataset.top = ''
+      window.scrollTo(0, scrollPositionLock);
+   }
+}
+
 export {
    numberFormat,
    declOfNum,
@@ -325,5 +348,6 @@ export {
    highlightSomeText,
    getIdFromURL,
    kFormatter,
-   transformDate
+   transformDate,
+   lockBodyOnModalOpen
 };

@@ -1,6 +1,8 @@
 // Типографика форм
 
-input, textarea, select { font-family:'TT Norms Pro' !important; }
+input, textarea, select {
+    font-family: 'TT Norms Pro' !important;
+}
 
 @-webkit-keyframes autofill {
     to {
@@ -13,15 +15,18 @@ input, textarea, select { font-family:'TT Norms Pro' !important; }
     font-weight: 400;
     color: $colorGray;
 }
+
 :-ms-input-placeholder {
     font-weight: 400;
     color: $colorGray;
 }
+
 ::-moz-placeholder {
     font-weight: 400;
     color: $colorGray;
     opacity: 1;
 }
+
 :-moz-placeholder {
     font-weight: 400;
     color: $colorGray;
@@ -29,18 +34,19 @@ input, textarea, select { font-family:'TT Norms Pro' !important; }
 }
 
 
-
-
 .form {
     position: relative;
     background: #ffffff;
     overflow: hidden;
+
     .form-row {
         display: flex;
         justify-content: space-between;
+
         .field {
             width: 49%;
         }
+
         @include mobile {
             flex-wrap: wrap;
             .field {
@@ -55,6 +61,7 @@ input, textarea, select { font-family:'TT Norms Pro' !important; }
         transform: translateY(0);
         opacity: 1;
     }
+
     .form-message {
         display: flex;
         align-items: center;
@@ -68,11 +75,13 @@ input, textarea, select { font-family:'TT Norms Pro' !important; }
         opacity: 0;
         transition-delay: 1s;
         z-index: -1;
+
         * {
             transform: translateY(100%);
             opacity: 0;
             transition: .6s linear;
         }
+
         .message-icon {
             display: flex;
             width: 45px;
@@ -80,12 +89,14 @@ input, textarea, select { font-family:'TT Norms Pro' !important; }
             align-items: center;
             justify-content: center;
             margin: 0 auto;
+
             img {
                 width: 100%;
                 height: auto;
                 max-width: 100%;
             }
         }
+
         .message-title {
             font-weight: bold;
             font-size: 25px;
@@ -96,6 +107,7 @@ input, textarea, select { font-family:'TT Norms Pro' !important; }
             margin-top: 10px;
             margin-bottom: 3px;
         }
+
         .message-subtitle {
             font-weight: 500;
             font-size: 18px;
@@ -106,10 +118,12 @@ input, textarea, select { font-family:'TT Norms Pro' !important; }
             margin-top: 0;
         }
     }
+
     .form-text {
         width: 100%;
         margin: 0;
     }
+
     &.form-hide {
         .field,
         .form-bottom,
@@ -123,11 +137,13 @@ input, textarea, select { font-family:'TT Norms Pro' !important; }
             opacity: 0;
             pointer-events: none;
         }
+
         .form-message {
             height: 100%;
             transform: translateY(0);
             opacity: 1;
             z-index: 9;
+
             * {
                 transform: translateY(0);
                 opacity: 1;
@@ -143,6 +159,8 @@ input, textarea, select { font-family:'TT Norms Pro' !important; }
     padding: 1px 0 0 0;
     cursor: pointer;
     z-index: 999;
+    overflow: hidden;
+
     .label {
         display: inline-block;
         width: 100%;
@@ -164,6 +182,7 @@ input, textarea, select { font-family:'TT Norms Pro' !important; }
         transition: all 0.2s ease;
         font-family: $fontBase !important;
     }
+
     .input-text, .input-fill-control {
         display: flex;
         width: 100%;
@@ -177,15 +196,18 @@ input, textarea, select { font-family:'TT Norms Pro' !important; }
         box-sizing: border-box;
         border-radius: 5px;
         font-family: $fontBase !important;
+
         &:-webkit-autofill {
             -webkit-animation-name: autofill;
             -webkit-animation-fill-mode: both;
         }
+
         &:focus {
             border: 1px solid $colorBlue;
         }
 
     }
+
     &.empty {
         .label {
             top: 24px;
@@ -194,38 +216,48 @@ input, textarea, select { font-family:'TT Norms Pro' !important; }
             line-height: 24px;
             color: $colorText;
         }
+
         .input-text {
             background: $colorBg;
             border: 1px solid $colorBg;
+
             &::-webkit-input-placeholder {
                 opacity: 0;
             }
+
             &:-ms-input-placeholder {
                 opacity: 0;
             }
+
             &::-moz-placeholder {
                 opacity: 0;
             }
+
             &:-moz-placeholder {
                 opacity: 0;
             }
         }
     }
+
     &.with-search-icon {
         .label {
             left: 17px;
         }
+
         &:before {
             display: none;
         }
+
         .input-text {
             padding-left: 17px;
         }
     }
+
     &.with-search-icon.empty {
         .label {
             left: 54px;
         }
+
         &:before {
             position: absolute;
             top: 26px;
@@ -253,10 +285,12 @@ input, textarea, select { font-family:'TT Norms Pro' !important; }
 
         }
     }
+
     textarea.input-text {
         height: 96px;
         resize: none;
     }
+
     .error-message {
         display: none;
         margin: 5px 0 0 0;
@@ -268,11 +302,13 @@ input, textarea, select { font-family:'TT Norms Pro' !important; }
         top: 52px;
         left: 0;
     }
+
     &.error {
         input, select, textarea {
             color: $colorText;
             border-color: $colorRed;
         }
+
         .error-message {
             display: block;
         }
@@ -280,14 +316,13 @@ input, textarea, select { font-family:'TT Norms Pro' !important; }
 }
 
 input[type="checkbox"]:checked,
-input[type="checkbox"]:not(:checked)
-{
+input[type="checkbox"]:not(:checked) {
     position: absolute;
     left: -9999px;
 }
 
 input[type="checkbox"]:checked + label,
-input[type="checkbox"]:not(:checked) + label{
+input[type="checkbox"]:not(:checked) + label {
     display: inline-block;
     position: relative;
     padding-left: 40px;
@@ -296,7 +331,7 @@ input[type="checkbox"]:not(:checked) + label{
 }
 
 input[type="checkbox"]:checked + label:before,
-input[type="checkbox"]:not(:checked) + label:before{
+input[type="checkbox"]:not(:checked) + label:before {
     content: "";
     position: absolute;
     left: 0;
@@ -319,7 +354,7 @@ input[type="checkbox"]:checked + label:before {
 
 
 input[type="checkbox"]:checked + label:after,
-input[type="checkbox"]:not(:checked) + label:after{
+input[type="checkbox"]:not(:checked) + label:after {
     content: "";
     position: absolute;
     -webkit-transition: all 0.2s ease;

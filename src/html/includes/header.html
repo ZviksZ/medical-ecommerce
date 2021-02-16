@@ -112,94 +112,95 @@
     <img src="./img/loader/text.svg" alt="" class="text">
 </div>
 
+
 <!-- Для главной страницы добавить хедеру класс header-transparent -->
 <% if (header === 'transparent') { %>
 <div id="header" class="header header-transparent">
-<% } else { %>
-<div id="header" class="header">
-<% } %>
-    <div class="header-top hide-mobile">
-        <div class="container">
-            <div class="header-content">
-                <div class="header-top__menu">
-                    <a href="#">О компании</a>
-                    <a href="#">Вопрос-ответ</a>
-                    <a href="#">Контакты</a>
-                </div>
-                <a href="#" class="header-top__link">EN</a>
-                <a href="#" class="header-top__link with-icon" data-open-modal-button="search-modal" data-effect-type="open-modal-fade-effect">
-                    <i class="icon-search"></i>
-                </a>
-                <a href="mailto:info@pentcroft.ru" class="header-top__link email-link">
-                    info@pentcroft.ru
-                </a>
-            </div>
-        </div>
-
-    </div>
-    <div class="header-main hide-mobile">
-        <div class="container">
-            <div class="header-content">
-                <a href="/" class="logo">
-                    <img src="./img/logo-text.svg" alt="">
-                </a>
-
-                <div class="header-main__menu">
-                    <a class="item" href="#">Каталог продуктов</a>
-                    <a class="item" href="#">Закупщикам</a>
-                    <a class="item" href="#">
-                        <span>Интернет-магазин</span>
-                        <img src="./img/link-icon.svg" alt="">
+    <% } else { %>
+    <div id="header" class="header">
+        <% } %>
+        <div class="header-top hide-mobile">
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-top__menu">
+                        <a href="#">О компании</a>
+                        <a href="#">Вопрос-ответ</a>
+                        <a href="#">Контакты</a>
+                    </div>
+                    <a href="#" class="header-top__link">EN</a>
+                    <a href="#" class="header-top__link with-icon" data-open-modal-button="search-modal" data-effect-type="open-modal-fade-effect">
+                        <i class="icon-search"></i>
                     </a>
-                    <div class="header-main__double-link">
-                        <a class="item" href="tel:74957887746">+7 (495) 788-77-46</a>
-                        <a href="#" class="call-btn">Заказать звонок</a>
+                    <a href="mailto:info@pentcroft.ru" class="header-top__link email-link">
+                        info@pentcroft.ru
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="header-main hide-mobile">
+            <div class="container">
+                <div class="header-content">
+                    <a href="/" class="logo">
+                        <img src="./img/logo-text.svg" alt="">
+                    </a>
+
+                    <div class="header-main__menu">
+                        <a class="item" href="#">Каталог продуктов</a>
+                        <a class="item" href="#">Закупщикам</a>
+                        <a class="item" href="#">
+                            <span>Интернет-магазин</span>
+                            <img src="./img/link-icon.svg" alt="">
+                        </a>
+                        <div class="header-main__double-link">
+                            <a class="item" href="tel:74957887746">+7 (495) 788-77-46</a>
+                            <a href="#" class="call-btn">Заказать звонок</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="header-mobile hide-desktop">
-        <div class="header__burger" id="header__burger">
-            <span></span>
-        </div>
-        <a href="/" class="logo">
-            <img src="./img/logo.svg" alt="">
-        </a>
-        <a href="#" class="call-btn">
-            <img src="./img/phone-icon.svg" alt="">
-        </a>
-
-    </div>
-</div>
-
-<div class="header-menu__mobile">
-    <div class="header-margin"></div>
-    <div class="container">
-        <a href="" class="header-menu__item big">Каталог продуктов</a>
-        <a href="" class="header-menu__item big">Закупщикам</a>
-        <a href="" class="header-menu__item big with-icon">
-            <span>Интернет-магазин</span>
-            <img src="./img/link-icon.svg" alt="">
-        </a>
-        <a href="" class="header-menu__item ">О компании</a>
-        <a href="" class="header-menu__item ">Вопрос-ответ</a>
-        <a href="" class="header-menu__item ">Контакты</a>
-        <div class="header-menu__double-link">
-            <a class="item" href="tel:74957887746">+7 (495) 788-77-46</a>
-            <a href="#" class="call-btn">Заказать звонок</a>
-        </div>
-        <div class="header-menu__footer">
-            <a href="mailto:info@pentcroft.ru" class="header-menu__item email-link">info@pentcroft.ru</a>
-
-            <a href="#" class="header-menu__round-link mla">EN</a>
-            <a href="#" class="header-menu__round-link" data-open-modal-button="search-modal" data-effect-type="open-modal-fade-effect">
-                <i class="icon-search"></i>
+        <div class="header-mobile hide-desktop">
+            <div class="header__burger" id="header__burger">
+                <span></span>
+            </div>
+            <a href="/" class="logo">
+                <img src="./img/logo.svg" alt="">
             </a>
+            <a href="#" class="call-btn">
+                <img src="./img/phone-icon.svg" alt="">
+            </a>
+
         </div>
     </div>
 
-</div>
+    <div class="header-menu__mobile">
+        <div class="header-margin"></div>
+        <div class="container">
+            <a href="" class="header-menu__item big">Каталог продуктов</a>
+            <a href="" class="header-menu__item big">Закупщикам</a>
+            <a href="" class="header-menu__item big with-icon">
+                <span>Интернет-магазин</span>
+                <img src="./img/link-icon.svg" alt="">
+            </a>
+            <a href="" class="header-menu__item " >О компании</a>
+            <a href="" class="header-menu__item ">Вопрос-ответ</a>
+            <a href="" class="header-menu__item ">Контакты</a>
+            <div class="header-menu__double-link">
+                <a class="item" href="tel:74957887746">+7 (495) 788-77-46</a>
+                <a href="#" class="call-btn">Заказать звонок</a>
+            </div>
+            <div class="header-menu__footer">
+                <a href="mailto:info@pentcroft.ru" class="header-menu__item email-link">info@pentcroft.ru</a>
+
+                <a href="#" class="header-menu__round-link mla">EN</a>
+                <a href="#" class="header-menu__round-link" data-open-modal-button="search-modal" data-effect-type="open-modal-fade-effect">
+                    <i class="icon-search"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
 
 <div class="preloader-page-pxl"></div>
 

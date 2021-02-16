@@ -44,10 +44,11 @@ $(function() {
    // форма подписки на рассылку новостей
    new FeedForm();
 
-   // инициализация функционала модальных окон
-   let modal = new ModalWindowFullScreen();
-
    // Инициализация плейсхолдеров и масок
    initMaskedInput();
    initPlaceholders();
+
+
+   // инициализация функционала модальных окон
+   let modal = new ModalWindowFullScreen();
 });
