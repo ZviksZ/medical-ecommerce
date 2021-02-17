@@ -115,8 +115,9 @@
                     -webkit-background-size: contain;
                     background-size: contain;
                     opacity: 0;
-                    transition: 0.4s;
+                    transition: all 0.4s ease;
                     transition-delay: 1.3s;
+                    -webkit-backface-visibility:hidden;
                     transform: translateX(0) translateY(10px);
                 }
                 .text {
@@ -143,6 +144,7 @@
                         }
                         .img {
                             transform: translateX(-25px) translateY(10px);
+                            z-index: 1;
                         }
                     }
                 }
@@ -286,8 +288,12 @@
         * {
             transition-delay: 0s !important;
         }
-        .text, .img {
-            transition: 0.5s ease !important;
+        .text {
+            transition: padding 0.3s ease !important;
+        }
+
+        .img {
+            transition: transform 0.3s ease !important;
         }
     }
 }

@@ -1,12 +1,12 @@
 import * as $ from 'jquery';
 import { CatalogDetailOrder, CatalogDetailSlider } from './components/catalog-detail';
-import { CatalogFilter } from './components/catalog-filter';
+import { CatalogFilter }                     from './components/catalog-filter';
 import { CustomSelect }                      from './components/custom-select';
 import { CustomTabs }                        from './components/custom-tabs';
-import { FeedForm }                          from './components/feed-form';
 import { initMaskedInput, initPlaceholders } from './components/form';
 import { Header }                            from './components/header';
 import { HeaderMenu }                        from './components/header-menu';
+import { InitForm }                          from './components/init-form';
 import { MainPageSlider }                    from './components/main-page-slider';
 import { InitMap }                           from './components/map';
 import { ModalWindowFullScreen }             from './components/modal-window-fullscreen';
@@ -42,7 +42,7 @@ $(function() {
    new Search();
 
    // форма подписки на рассылку новостей
-   new FeedForm();
+   new InitForm();
 
    // Инициализация плейсхолдеров и масок
    initMaskedInput();

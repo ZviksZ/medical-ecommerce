@@ -30,15 +30,16 @@ export class Search {
 
       if (query.length > 0) {
          this.$searchInputClear.addClass('show');
+
+         this.getSearch(query);
       } else {
          this.$searchInputClear.removeClass('show');
+         this.$searchResults.html('')
       }
-
-      this.getSearch(query);
    };
 
    getSearch = async (query) => {
-      await fetch('/search/', {
+      this.searchData = await fetch('/search/', {
          headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json'
@@ -47,23 +48,21 @@ export class Search {
          body: JSON.stringify({
             query
          })
-      })
-         /*.then((res) => res.json());*/
-
-      this.searchData = search
+      }).then((res) => res.json());
 
       this.getSearchResults()
    }
 
    getSearchResults = () => {
       let template = ''
-      if (this.searchData.length) {
+
+      if (this.searchData.length > 0) {
          for(let i = 0; i < this.searchData.length; i++) {
             let block = this.searchData[i]
-            if (block.data.length) {
+            if (block.data) {
                template += `<div class="search-block"><div class="search-block__title">${block.title}</div>`
 
-               for(let j = 0; j < block.data.length; j++) {
+               for(let j in block.data) {
                   const item = block.data[j]
                   template += `<a href="${item.link}" class="search-block__item">${item.name}</a>`
                }

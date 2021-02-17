@@ -256,26 +256,26 @@ function initFormWithValidate($form) {
 
 	const $submit = $form.find('[type="submit"]');
 
-	checkDisabledSubmit();
+	//checkDisabledSubmit();
 
 	// инпаты
 	$form.find('.validate')
 		 .on('keyup', () => {
-			 checkDisabledSubmit();
+			 //checkDisabledSubmit();
 		 })
 		 .on('change', function () {
 			 validateForm($form, false);
 			 validateField($(this));
 
-			 checkDisabledSubmit();
+			 //checkDisabledSubmit();
 		 });
 
 	// чекбоксы/радио
-	$form.find('div.validate input')
+	/*$form.find('div.validate input')
 		 .on('change', function () {
 			 validateForm($form, false);
 			 validateField($(this).parents('.validate'));
-		 });
+		 });*/
 
 	function checkDisabledSubmit() {
 		if (validateForm($form, false)) {

@@ -4,18 +4,34 @@
         max-width: 100%;
         overflow: auto;
         padding-bottom: 50px;
-        &::-webkit-scrollbar { width: 0; }
-        & { -ms-overflow-style: none; }
-        & { overflow: -moz-scrollbars-none; }
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+
+        & {
+            -ms-overflow-style: none;
+        }
+
+        & {
+            overflow: -moz-scrollbars-none;
+        }
     }
+
     .h1 {
         .count {
             color: $colorBlue;
         }
     }
+
+    .field {
+        overflow: hidden;
+    }
+
     .filter-search-block {
         display: flex;
         align-items: center;
+
         .filter-clear-search {
             display: none;
             margin-left: 20px;
@@ -30,10 +46,12 @@
                 line-height: 26px;
                 margin-left: 12px;
             }
+
             &.show {
                 display: inline-block;
             }
         }
+
         .field {
             width: 100%;
         }
@@ -41,11 +59,13 @@
 
     .filter-item {
         margin-bottom: 28px;
+
         span {
             font-size: 20px;
             line-height: 24px;
             color: $colorText;
         }
+
         &.filter-item__main {
             span {
                 font-weight: bold;
@@ -62,6 +82,7 @@
         padding-left: 42px;
         padding-top: 4px;
         margin-bottom: 28px;
+
         .letter {
             position: absolute;
             top: 0;
@@ -73,6 +94,7 @@
             color: $colorText;
         }
     }
+
     @include mobile {
         .filter-item {
             font-size: 18px;
@@ -80,6 +102,7 @@
         }
         .letter-item {
             padding-top: 1px;
+
             .letter {
                 font-size: 16px;
                 line-height: 19px;

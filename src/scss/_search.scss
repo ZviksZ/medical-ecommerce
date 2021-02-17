@@ -1,5 +1,7 @@
 
 .search-block {
+    display: flex;
+    flex-direction: column;
     .search-block__title {
         font-size: 14px;
         line-height: 24px;
