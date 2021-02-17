@@ -65,6 +65,17 @@ h5, .h5 {
     }
 }
 
+h6, .h6 {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 26px;
+    color: $colorText;
+    @include mobile {
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+
 
 p {
     font-size: 17px;

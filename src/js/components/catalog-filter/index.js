@@ -18,7 +18,6 @@ export class CatalogFilter {
       this.$catalogFilterText = $('#catalog-filter-text');
       this.$catalogClearSearch = $('#clear-catalog-search');
 
-
       this.catalogType = $('#catalogType').val();
 
       this.isItFirstTouch = true;
@@ -45,6 +44,8 @@ export class CatalogFilter {
             this.$filter.find('#catalog-categories-list input').each((index, item) => {
                $(item).prop('checked', false);
             });
+
+            $('#filter-select-all').prop('checked', false);
 
             $(e.currentTarget).prop('checked', true);
 
@@ -100,6 +101,7 @@ export class CatalogFilter {
    };
 
    catalogSearch = query => {
+      this.$catalogFilterList.find('.letter-item').addClass('hide');
       this.$catalogFilterList.find('.letter-item .filter-item').addClass('hide');
 
       this.$catalogFilterList.find('.letter-item .filter-item').each((_, item) => {
@@ -108,7 +110,10 @@ export class CatalogFilter {
             .toLowerCase();
 
          if (text.indexOf(query.toLowerCase()) !== -1) {
-            $(item).removeClass('hide');
+            $(item)
+               .removeClass('hide')
+               .closest('.letter-item')
+               .removeClass('hide');
          }
       });
 
@@ -124,13 +129,13 @@ export class CatalogFilter {
    };
 
    getCatalogItems = async () => {
-      const checkedIds = []
+      const checkedIds = [];
 
       this.$form.find('input').each((index, item) => {
-         const isChecked = $(item).prop('checked')
-         const id = $(item).attr('id')
+         const isChecked = $(item).prop('checked');
+         const id = $(item).attr('id');
          if (isChecked) {
-            checkedIds.push(id)
+            checkedIds.push(id);
          }
       });
 
@@ -145,8 +150,9 @@ export class CatalogFilter {
                ids: checkedIds,
                type: this.catalogType
             })
-         }).then((res) => res.json())
-            .catch((err) => this.onError());
+         })
+            .then(res => res.json())
+            .catch(err => this.onError());
 
          if (this.catalogData.length) {
             this.$catalogFilterBtn.removeClass('hide').text('Показать ' + this.catalogData.length + ' ' + declOfNum(this.catalogData.length, ['продукт', 'продукта', 'продуктов']));
@@ -218,6 +224,7 @@ export class CatalogFilter {
 
       return template;
    };
+
    getItemType = item => {
       return `
         <span class="card-item__tag color-${item.productType}">${item.productTypeName}</span>

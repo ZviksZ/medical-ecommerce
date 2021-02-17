@@ -195,3 +195,66 @@
 }
 
 
+.small-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .modal-content {
+        width: 100%;
+        height: auto;
+        max-width: 740px;
+        background: $colorWhite;
+        border-radius: 30px;
+        padding: 46px 68px 55px;
+        margin: auto !important;
+
+        @include only-mobile {
+            padding: 26px 18px 30px;
+        }
+    }
+}
+
+.download-block {
+    display: flex;
+    flex-direction: column;
+}
+.download-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    background: $colorBg;
+    border-radius: 8px;
+    padding: 16px;
+    transition: 0.2s ease;
+    width: 100%;
+    max-width: 322px;
+    margin: 13px 0;
+
+    svg {
+        width: 20px;
+        min-width: 20px;
+        height: 20px;
+    }
+
+    span {
+        font-weight: 500;
+        display: inline-block;
+        font-size: 17px;
+        line-height: 29px;
+        color: $colorText;
+        margin-left: 15px;
+    }
+
+    @include desktop {
+        &:hover {
+            svg {
+                path {
+                    fill: $colorBlue;
+                }
+            }
+            span {
+                color: $colorBlue;
+            }
+        }
+    }
+}

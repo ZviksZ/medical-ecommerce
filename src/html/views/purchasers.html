@@ -4,7 +4,7 @@ header: "blue"
 }; %>
 <%= _.template(require('./../includes/header.html').default)(data) %>
 
-<section class="section no-padding-top catalog-detail">
+<section class="section no-padding-top">
     <div class="container">
         <div class="breadcrumbs">
             <a href="/" class="item">Главная</a>
@@ -15,15 +15,15 @@ header: "blue"
         <p>Вот вам яркий пример современных тенденций - социально-экономическое развитие играет важную роль в формировании стандартных подходов. Разбавленное изрядной долей эмпатии, рациональное мышление однозначно фиксирует необходимость системы массового участия. В рамках спецификации современных стандартов, элементы политического процесса своевременно верифицированы.</p>
 
 
-        <form class="form">
-            <h4 class="h4">Оставить заявку на актуальный прайс для юридических лиц</h4>
+        <form action="/byers.php" class="form">
+            <h4 class="h4 margin-bottom-x2">Оставить заявку на актуальный прайс для юридических лиц</h4>
 
-            <div class="margin-bottom-x2 margin-top-x2">
+            <!--<div class="margin-bottom-x2 margin-top-x2">
                 <input type="checkbox" id="entity" name="entity-group" checked>
                 <label class="" for="entity">
                     <span>Группа покупателя – юридическое лицо</span>
                 </label>
-            </div>
+            </div>-->
 
             <div class="form-row">
                 <label class="field field-input field-required">
@@ -33,7 +33,7 @@ header: "blue"
                 </label>
                 <label class="field field-input field-required">
                     <input class="input-text placeholder validate" data-validate="email-required" placeholder="Введите email" data-placeholder="Электронная почта"
-                           name="email" id="f_email" type="text">
+                           name="mail" id="f_email" type="text">
                     <p class="error-message"></p>
                 </label>
             </div>
@@ -41,12 +41,12 @@ header: "blue"
             <div class="form-row">
                 <label class="field field-input field-required">
                     <input class="input-text placeholder validate input-mask" data-mask_tpl="phone_plus7" data-validate="number_phone-required" placeholder="Введите телефон" data-placeholder="Номер телефона"
-                           name="phone" id="f_phone" type="text">
+                           name="feedback_phone" id="f_phone" type="text">
                     <p class="error-message"></p>
                 </label>
                 <label class="field field-input field-required">
                     <input class="input-text placeholder validate" data-validate="required" placeholder="Введите наименование контрагента" data-placeholder="Наименование контрагента"
-                           name="contractor" id="f_contractor" type="text">
+                           name="ctrAgentName" id="f_contractor" type="text">
                     <p class="error-message"></p>
                 </label>
             </div>
@@ -80,27 +80,13 @@ header: "blue"
                 <img class="error" src="./img/error.svg" alt="">
                 <img class="success" src="./img/success.svg" alt="">
                 <div class="title h4"></div>
-                <p class="text"></p>
+                <p class="text margin-bottom"></p>
+                <button class="button close-form-message hide">Закрыть</button>
             </div>
         </form>
     </div>
 </section>
-<section class="section no-padding-top">
-    <div class="container">
-        <form class="feed-form" id="feed_form">
-            <div class="bg" style="background-image: url(./img/feed-form-bg.jpg)"></div>
-            <div class="title">Подписаться на рассылку новостей</div>
 
-            <label class="field field-input item">
-                <input class="input-text placeholder validate" data-validate="email-required" placeholder="email@test.ru" data-placeholder="Адрес электронной почты"
-                       name="filter-search" id="feed-follow-input" type="text">
-                <p class="error-message"></p>
-            </label>
-
-            <button class="button small dark-blue" id="feed-follow-button">Подписаться</button>
-        </form>
-    </div>
-</section>
 
 
 <%= _.template(require('./../includes/footer.html').default)(data) %>

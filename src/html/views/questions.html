@@ -4,7 +4,8 @@ header: "blue"
 }; %>
 <%= _.template(require('./../includes/header.html').default)(data) %>
 
-<section class="section no-padding-top catalog-detail">
+
+<section class="section no-padding-vertical">
     <div class="container">
         <div class="breadcrumbs">
             <a href="/" class="item">Главная</a>
@@ -14,14 +15,7 @@ header: "blue"
         <h1 class="h1 margin-top-x2 margin-bottom-x2">Вопрос-ответ</h1>
 
         <form class="form">
-            <h4 class="h4">Оставить заявку на актуальный прайс для юридических лиц</h4>
-
-            <div class="margin-bottom-x2 margin-top-x2">
-                <input type="checkbox" id="entity" name="entity-group" checked>
-                <label class="" for="entity">
-                    <span>Группа покупателя – юридическое лицо</span>
-                </label>
-            </div>
+            <h4 class="h4 margin-bottom-x2">Задайте ваш вопрос</h4>
 
             <div class="form-row">
                 <label class="field field-input field-required">
@@ -31,33 +25,16 @@ header: "blue"
                 </label>
                 <label class="field field-input field-required">
                     <input class="input-text placeholder validate" data-validate="email-required" placeholder="Введите email" data-placeholder="Электронная почта"
-                           name="email" id="f_email" type="text">
+                           name="mail" id="f_email" type="text">
                     <p class="error-message"></p>
                 </label>
             </div>
 
-            <div class="form-row">
+            <div class="form-row form-row--big">
                 <label class="field field-input field-required">
-                    <input class="input-text placeholder validate input-mask" data-mask_tpl="phone_plus7" data-validate="number_phone-required" placeholder="Введите телефон" data-placeholder="Номер телефона"
-                           name="phone" id="f_phone" type="text">
-                    <p class="error-message"></p>
-                </label>
-                <label class="field field-input field-required">
-                    <input class="input-text placeholder validate" data-validate="required" placeholder="Введите наименование контрагента" data-placeholder="Наименование контрагента"
-                           name="contractor" id="f_contractor" type="text">
-                    <p class="error-message"></p>
-                </label>
-            </div>
-
-            <div class="form-row">
-                <label class="field field-input field-required">
-                    <input class="input-text placeholder validate" data-validate="required" placeholder="Введите ИНН" data-placeholder="ИНН контрагента"
-                           name="inn" id="f_inn" type="text">
-                    <p class="error-message"></p>
-                </label>
-                <label class="field field-input field-required">
-                    <input class="input-text placeholder validate" data-validate="required" placeholder="Введите ИНН контрагента" data-placeholder="ИНН контрагента"
-                           name="c-inn" id="f_c-inn" type="text">
+                    <textarea class="input-text placeholder validate" data-validate="required" placeholder="Введите ваш вопрос"
+                       data-placeholder="Ваш вопрос"
+                              name="question" id="f_question"></textarea>
                     <p class="error-message"></p>
                 </label>
             </div>
@@ -71,7 +48,7 @@ header: "blue"
                     <div class="error-message"></div>
                 </div>
 
-                <button class="button" type="submit">Оставить заявку</button>
+                <button class="button" type="submit">Отправить вопрос</button>
             </div>
 
             <div class="form-message">
@@ -83,20 +60,71 @@ header: "blue"
         </form>
     </div>
 </section>
-<section class="section no-padding-top">
+
+<section class="section info no-padding-top">
     <div class="container">
-        <form class="feed-form" id="feed_form">
-            <div class="bg" style="background-image: url(./img/feed-form-bg.jpg)"></div>
-            <div class="title">Подписаться на рассылку новостей</div>
-
-            <label class="field field-input item">
-                <input class="input-text placeholder validate" data-validate="email-required" placeholder="email@test.ru" data-placeholder="Адрес электронной почты"
-                       name="filter-search" id="feed-follow-input" type="text">
-                <p class="error-message"></p>
-            </label>
-
-            <button class="button small dark-blue" id="feed-follow-button">Подписаться</button>
-        </form>
+        <div class="info__wrap">
+            <div class="item">
+                <div class="top">
+                    <p class="h6">Подтверждено: сознание наших соотечественников не замутнено пропагандой?</p>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="item-path"
+                              d="M17 11H13V7C13 6.73478 12.8946 6.48043 12.7071 6.29289C12.5196 6.10536 12.2652 6 12 6C11.7348 6 11.4804 6.10536 11.2929 6.29289C11.1054 6.48043 11 6.73478 11 7V11H7C6.73478 11 6.48043 11.1054 6.29289 11.2929C6.10536 11.4804 6 11.7348 6 12C6 12.2652 6.10536 12.5196 6.29289 12.7071C6.48043 12.8946 6.73478 13 7 13H11V17C11 17.2652 11.1054 17.5196 11.2929 17.7071C11.4804 17.8946 11.7348 18 12 18C12.2652 18 12.5196 17.8946 12.7071 17.7071C12.8946 17.5196 13 17.2652 13 17V13H17C17.2652 13 17.5196 12.8946 17.7071 12.7071C17.8946 12.5196 18 12.2652 18 12C18 11.7348 17.8946 11.4804 17.7071 11.2929C17.5196 11.1054 17.2652 11 17 11Z" fill="#191C1F"/>
+                        <circle class="item-circle"  cx="12" cy="12" r="11" stroke="#191C1F" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="content">
+                    <p class="color-gray body16-mobile">
+                        В частности, дальнейшее развитие различных форм деятельности позволяет выполнить важные задания по разработке дальнейших направлений развития. Предварительные выводы неутешительны: экономическая повестка сегодняшнего дня говорит о возможностях существующих финансовых и административных условий.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="top">
+                    <p class="h6">Подтверждено: сознание наших соотечественников не замутнено пропагандой?</p>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="item-path"
+                              d="M17 11H13V7C13 6.73478 12.8946 6.48043 12.7071 6.29289C12.5196 6.10536 12.2652 6 12 6C11.7348 6 11.4804 6.10536 11.2929 6.29289C11.1054 6.48043 11 6.73478 11 7V11H7C6.73478 11 6.48043 11.1054 6.29289 11.2929C6.10536 11.4804 6 11.7348 6 12C6 12.2652 6.10536 12.5196 6.29289 12.7071C6.48043 12.8946 6.73478 13 7 13H11V17C11 17.2652 11.1054 17.5196 11.2929 17.7071C11.4804 17.8946 11.7348 18 12 18C12.2652 18 12.5196 17.8946 12.7071 17.7071C12.8946 17.5196 13 17.2652 13 17V13H17C17.2652 13 17.5196 12.8946 17.7071 12.7071C17.8946 12.5196 18 12.2652 18 12C18 11.7348 17.8946 11.4804 17.7071 11.2929C17.5196 11.1054 17.2652 11 17 11Z" fill="#191C1F"/>
+                        <circle class="item-circle"  cx="12" cy="12" r="11" stroke="#191C1F" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="content">
+                    <p class="color-gray body16-mobile">
+                        В частности, дальнейшее развитие различных форм деятельности позволяет выполнить важные задания по разработке дальнейших направлений развития. Предварительные выводы неутешительны: экономическая повестка сегодняшнего дня говорит о возможностях существующих финансовых и административных условий.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="top">
+                    <p class="h6">Подтверждено: сознание наших соотечественников не замутнено пропагандой?</p>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="item-path"
+                              d="M17 11H13V7C13 6.73478 12.8946 6.48043 12.7071 6.29289C12.5196 6.10536 12.2652 6 12 6C11.7348 6 11.4804 6.10536 11.2929 6.29289C11.1054 6.48043 11 6.73478 11 7V11H7C6.73478 11 6.48043 11.1054 6.29289 11.2929C6.10536 11.4804 6 11.7348 6 12C6 12.2652 6.10536 12.5196 6.29289 12.7071C6.48043 12.8946 6.73478 13 7 13H11V17C11 17.2652 11.1054 17.5196 11.2929 17.7071C11.4804 17.8946 11.7348 18 12 18C12.2652 18 12.5196 17.8946 12.7071 17.7071C12.8946 17.5196 13 17.2652 13 17V13H17C17.2652 13 17.5196 12.8946 17.7071 12.7071C17.8946 12.5196 18 12.2652 18 12C18 11.7348 17.8946 11.4804 17.7071 11.2929C17.5196 11.1054 17.2652 11 17 11Z" fill="#191C1F"/>
+                        <circle class="item-circle"  cx="12" cy="12" r="11" stroke="#191C1F" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="content">
+                    <p class="color-gray body16-mobile">
+                        В частности, дальнейшее развитие различных форм деятельности позволяет выполнить важные задания по разработке дальнейших направлений развития. Предварительные выводы неутешительны: экономическая повестка сегодняшнего дня говорит о возможностях существующих финансовых и административных условий.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="top">
+                    <p class="h6">Подтверждено: сознание наших соотечественников не замутнено пропагандой?</p>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="item-path"
+                              d="M17 11H13V7C13 6.73478 12.8946 6.48043 12.7071 6.29289C12.5196 6.10536 12.2652 6 12 6C11.7348 6 11.4804 6.10536 11.2929 6.29289C11.1054 6.48043 11 6.73478 11 7V11H7C6.73478 11 6.48043 11.1054 6.29289 11.2929C6.10536 11.4804 6 11.7348 6 12C6 12.2652 6.10536 12.5196 6.29289 12.7071C6.48043 12.8946 6.73478 13 7 13H11V17C11 17.2652 11.1054 17.5196 11.2929 17.7071C11.4804 17.8946 11.7348 18 12 18C12.2652 18 12.5196 17.8946 12.7071 17.7071C12.8946 17.5196 13 17.2652 13 17V13H17C17.2652 13 17.5196 12.8946 17.7071 12.7071C17.8946 12.5196 18 12.2652 18 12C18 11.7348 17.8946 11.4804 17.7071 11.2929C17.5196 11.1054 17.2652 11 17 11Z" fill="#191C1F"/>
+                        <circle class="item-circle"  cx="12" cy="12" r="11" stroke="#191C1F" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="content">
+                    <p class="color-gray body16-mobile">
+                        В частности, дальнейшее развитие различных форм деятельности позволяет выполнить важные задания по разработке дальнейших направлений развития. Предварительные выводы неутешительны: экономическая повестка сегодняшнего дня говорит о возможностях существующих финансовых и административных условий.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

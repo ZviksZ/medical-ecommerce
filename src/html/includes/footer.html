@@ -1,3 +1,20 @@
+<section class="section no-padding-top">
+    <div class="container">
+        <form class="feed-form" id="feed_form">
+            <div class="bg" style="background-image: url(./img/feed-form-bg.jpg)"></div>
+            <div class="title">Подписаться на рассылку новостей</div>
+
+            <label class="field field-input item">
+                <input class="input-text placeholder validate" data-placeholder="Адрес электронной почты" data-validate="email-required" id="feed-follow-input"
+                       name="filter-search" placeholder="email@test.ru" type="text">
+                <p class="error-message"></p>
+            </label>
+
+            <button class="button small dark-blue" id="feed-follow-button">Подписаться</button>
+        </form>
+    </div>
+</section>
+
 <div class="footer">
     <div class="container">
         <div class="footer-content">
@@ -174,7 +191,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-align-center">
+                <div class="fixed-catalog-btn text-align-center">
                     <div class="button hide" id="catalog-filter-btn" data-close-modal-button="catalog-modal" data-effect-type="open-modal-fade-effect">Показать</div>
                     <p id="catalog-filter-text" class="hide">Ничего не найдено</p>
                 </div>
@@ -209,7 +226,7 @@
     </div>
 </div>
 
-<div class="modal-window fade-in docs-modal" data-modal="docs-modal" id="docs-modal">
+<div class="modal-window fade-in small-modal docs-modal" data-modal="docs-modal" id="docs-modal">
 
     <div class="modal-content">
         <div class="container">
@@ -235,6 +252,56 @@
                 </a>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="modal-window fade-in small-modal feedback-modal" data-modal="feedback-modal" id="feedback-modal">
+
+    <div class="modal-content">
+        <div class="title-with-filter margin-bottom">
+            <h3 class="h3">
+                Заказать звонок
+            </h3>
+            <a href="#" class="close" data-close-modal-button="feedback-modal" data-effect-type="open-modal-fade-effect"><i class="icon-cancel"></i></a>
+        </div>
+
+        <form class="form">
+            <div class="form-row form-row--big">
+                <label class="field field-input field-required">
+                    <input class="input-text placeholder validate" data-validate="required" placeholder="Введите ваше имя" data-placeholder="ФИО"
+                           name="name" id="f_modal_name" type="text">
+                    <p class="error-message"></p>
+                </label>
+            </div>
+
+            <div class="form-row form-row--big">
+                <label class="field field-input field-required">
+                    <input class="input-text placeholder validate" data-validate="email-required" placeholder="Введите email" data-placeholder="Электронная почта"
+                           name="mail" id="f_modal_email" type="text">
+                    <p class="error-message"></p>
+                </label>
+            </div>
+
+
+            <input type="text" hidden name="cc" value="78">
+            <input type="text" hidden name="sub" value="78">
+
+            <div class="form-footer form-footer--reverse">
+
+                <button class="button nobr" type="submit">Заказать звонок</button>
+
+                <div class="form-footer__text">
+                    Нажимая кнопку вы соглашаетесь на <a href="#">обработку персональных данных</a> и с <a href="#">политикой конфиденциальности</a>
+                </div>
+            </div>
+
+            <div class="form-message">
+                <img class="error" src="./img/error.svg" alt="">
+                <img class="success" src="./img/success.svg" alt="">
+                <div class="title h4"></div>
+                <p class="text"></p>
+            </div>
+        </form>
     </div>
 </div>
 

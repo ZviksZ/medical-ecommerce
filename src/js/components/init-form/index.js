@@ -1,4 +1,4 @@
-import * as $ from 'jquery';
+import * as $                                 from 'jquery';
 import { initFormWithValidate, validateForm } from '../form';
 
 export class InitForm {
@@ -7,77 +7,80 @@ export class InitForm {
 
       if (this.$form.length === 0) return false;
 
-      this.$formMessage = this.$form.find('.form-message');
-      this.$captcha = this.$form.find('.g-recaptcha');
-
       this.init();
    }
 
    init = () => {
-      initFormWithValidate(this.$form);
+      this.$form.each(function() {
+         initFormWithValidate($(this));
+      });
+
 
       this.$form.on('submit', this.onSubmit);
+      this.$form.find('.close-form-message').on('click', this.closeFormMessage);
+   };
+
+   closeFormMessage = e => {
+      e.preventDefault();
+
+      $(e.currentTarget).closest('.form').removeClass('show-message success');
    };
 
    onSubmit = e => {
       e.preventDefault();
 
-      let data = this.$form.serialize();
+      const form = $(e.currentTarget);
 
-      let captchError = this.getCaptcha();
+      let data = form.serialize();
 
-      if (validateForm(this.$form, true) && !captchError) {
+      let captchaError = this.getCaptcha(form);
+
+      if (validateForm(form, true) && !captchaError) {
          $.ajax({
-            url: '/netcat/add.php',
+            url: form.attr('action'),
             type: 'POST',
             dataType: 'text',
             data: data,
             success: res => {
-               this.successForm();
+               this.clearForm(form);
+
+               form.find('.form-message .title').text('Успешно');
+               form.find('.form-message .text').text('Данные были успешно отправлены');
+
+               form.find('.close-form-message').show();
+
+               form.addClass('show-message success');
             },
             error: res => {
-               this.errorForm();
+               form.find('.form-message .title').text('Ошибка');
+               form.find('.form-message .text').text('Отправка данных не удалась. Попробуйте повторить отправку формы.');
+
+               form.addClass('show-message error');
+
+               setTimeout(() => {
+                  form.removeClass('show-message error');
+               }, 2500);
             },
             timeout: 30000
          });
       }
    };
 
-   getCaptcha = () => {
+   getCaptcha = (form) => {
       let captachaError = false;
 
-      if (this.$form.find('.g-recaptcha:visible').length) {
+      if (form.find('.g-recaptcha:visible').length) {
          let v = grecaptcha.getResponse();
          if (v.length == 0) {
             captachaError = true;
 
-            this.$form.find('.form-footer__captcha .error-message').text('Подтверждение обязательно');
+            form.find('.form-footer__captcha .error-message').text('Подтверждение обязательно');
          } else {
-            this.$form.find('.form-footer__captcha .error-message').text('');
+            form.find('.form-footer__captcha .error-message').text('');
          }
       }
 
       return captachaError;
-   };
-
-   successForm = () => {
-      this.clearForm(this.$form);
-
-      this.$formMessage.find('.title').text('Успешно!');
-      this.$formMessage.find('.text').text('Мы получили вашу заявку и скоро свяжемся с вами для уточнения всех деталей');
-
-      this.$form.addClass('show-message success');
-   };
-
-   errorForm = () => {
-      this.$formMessage.find('.title').text('Ошибка');
-      this.$formMessage.find('.text').text('Отправка данных не удалась. Попробуйте повторить отправку формы.');
-
-      this.$form.addClass('show-message error');
-
-      setTimeout(() => {
-         this.$form.removeClass('show-message error');
-      }, 2500);
    };
 
    clearForm = form => {

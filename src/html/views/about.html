@@ -207,22 +207,6 @@ header: "blue"
 
     </div>
 </section>
-<section class="section no-padding-top">
-    <div class="container">
-        <form class="feed-form" id="feed_form">
-            <div class="bg" style="background-image: url(./img/feed-form-bg.jpg)"></div>
-            <div class="title">Подписаться на рассылку новостей</div>
-
-            <label class="field field-input item">
-                <input class="input-text placeholder validate" data-validate="email-required" placeholder="email@test.ru" data-placeholder="Адрес электронной почты"
-                       name="filter-search" id="feed-follow-input" type="text">
-                <p class="error-message"></p>
-            </label>
-
-            <button class="button small dark-blue" id="feed-follow-button">Подписаться</button>
-        </form>
-    </div>
-</section>
 
 
 <%= _.template(require('./../includes/footer.html').default)(data) %>

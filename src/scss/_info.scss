@@ -1,0 +1,83 @@
+.info {
+    .info__wrap {
+        .item {
+            background: $colorWhite;
+            padding: 24px 0;
+
+            .top {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                cursor: pointer;
+                -moz-user-select: none;
+                -khtml-user-select: none;
+                user-select: none;
+                transition: 0.2s ease;
+
+                svg {
+                    min-width: 24px;
+                    margin: 0 0 0 15px;
+                }
+
+                @include desktop {
+                    &:hover {
+                        p {
+                            color: $colorBlue;
+                        }
+
+                        svg {
+                            .item-circle {
+                                stroke: $colorBlue;
+                            }
+
+                            .item-path {
+                                fill: $colorBlue;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .content {
+                display: none;
+                margin-top: 14px;
+
+                p {
+                    margin: 10px 0;
+                }
+            }
+
+            &.item-show-content {
+                .top {
+                    svg {
+                        transform: rotate(45deg);
+                    }
+                }
+
+                .content {
+                    display: block;
+                }
+            }
+
+            @include mobile {
+                padding: 14px 0;
+                .top {
+                    align-items: flex-start;
+
+                    p {
+                        margin: 0 20px 0 0;
+                    }
+
+                    svg {
+                        margin-top: 4px;
+                        min-width: 24px;
+                    }
+                }
+            }
+        }
+
+        .item + .item {
+            border-top: 1px solid $colorBg;
+        }
+    }
+}

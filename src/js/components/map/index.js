@@ -33,7 +33,7 @@ export class InitMap {
 
             const myPlacemark = new ymaps.Placemark(this.coords, {}, {
                iconLayout: 'default#image',
-               iconImageHref: './img/balloon.svg',
+               iconImageHref: '/img/balloon.svg',
                iconImageSize: [33, 49],
                iconImageOffset: [-16, -49]
             });

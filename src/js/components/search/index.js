@@ -22,7 +22,6 @@ export class Search {
    initHandlers = () => {
       this.$searchInput.on('input', this.searchInputHandler);
       this.$searchInputClear.on('click', this.clearSearch);
-      this.$searchInputClear.on('click', this.clearSearch);
    };
 
    searchInputHandler = e => {
@@ -82,6 +81,8 @@ export class Search {
       this.$searchInput.val('');
 
       this.getSearch('');
+
+      this.$searchResults.html('')
 
       this.$searchInputClear.removeClass('show');
    }

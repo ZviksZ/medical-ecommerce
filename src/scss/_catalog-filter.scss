@@ -1,4 +1,22 @@
 .catalog-modal {
+    .fixed-catalog-btn {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(255,255,255,0.6);
+       /* -webkit-box-shadow: 0px -2px 8px -1px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 0px -2px 8px -1px rgba(34, 60, 80, 0.2);
+        box-shadow: 0px -2px 8px -1px rgba(34, 60, 80, 0.2);*/
+
+        .button, p {
+            margin: 15px 0;
+
+            @include only-mobile {
+                margin: 8px 0;
+            }
+        }
+    }
     .modal-content {
         margin: 0 !important;
         max-width: 100%;
@@ -102,6 +120,7 @@
         }
         .letter-item {
             padding-top: 1px;
+            padding-left: 22px;
 
             .letter {
                 font-size: 16px;
