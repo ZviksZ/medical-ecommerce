@@ -230,10 +230,10 @@
     max-width: 322px;
     margin: 13px 0;
 
-    svg {
+    i {
         width: 20px;
-        min-width: 20px;
         height: 20px;
+        color: $colorText;
     }
 
     span {
@@ -247,12 +247,7 @@
 
     @include desktop {
         &:hover {
-            svg {
-                path {
-                    fill: $colorBlue;
-                }
-            }
-            span {
+            span, i {
                 color: $colorBlue;
             }
         }
