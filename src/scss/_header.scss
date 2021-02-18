@@ -225,6 +225,11 @@
     }
     &.no-fixed {
         transform: translateY(-100%);
+
+
+        @include mobile {
+            transform: translateY(0);
+        }
     }
 }
 

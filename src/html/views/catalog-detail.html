@@ -32,7 +32,14 @@ header: "blue"
             <div class="cd-top__info" id="cd-order">
                 <h1 class="h1 margin-bottom">Ультрафертил плюс</h1>
                 <p class="margin-bottom-x2 color-gray">Рекомендуется в качестве биологически активной добавки к пище - источника L-карнитина в качестве биологически активной добавки к пище</p>
-                <div class="tabs margin-bottom-x2" id="cd-order__tabs">
+                <h5 class="h5">Количество:</h5>
+                <div class="cd-quantity">
+                    <button class="button cd-quantity-minus"> <span>-</span> </button>
+                    <input class="cd-quantity-num" type="number" value="1" max="1000000" />
+                    <button class="button cd-quantity-plus"> <span>+</span> </button>
+                </div>
+
+                <!--<div class="tabs margin-bottom-x2" id="cd-order__tabs">
                     <div class="item disabled" data-size="1">Small</div>
                     <div class="item active" data-size="2">Medium</div>
                     <div class="item" data-size="3">Large</div>
@@ -45,10 +52,10 @@ header: "blue"
                         <option value="3">300 мл.</option>
                         <option value="4">400 мл.</option>
                     </select>
-                </div>
+                </div>-->
 
                 <div class="display-flex align-item-center">
-                    <button class="button" id="cd-order__btn">Заказать</button>
+                    <button class="button" id="cd-order__btn" data-open-modal-button="order-modal" data-effect-type="open-modal-fade-effect">Заказать</button>
                     <a href="#" class="button blue with-icon margin-left-x2">
                         <span>Интернет-магазин</span>
                         <img src="./img/link-icon.svg" alt="">

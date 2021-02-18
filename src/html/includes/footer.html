@@ -229,7 +229,6 @@
 <div class="modal-window fade-in small-modal docs-modal" data-modal="docs-modal" id="docs-modal">
 
     <div class="modal-content">
-        <div class="container">
             <div class="title-with-filter margin-bottom">
                 <h3 class="h3">
                     Вы медицинский специалист?
@@ -251,7 +250,6 @@
                     <div class="docs-cards__item-text">Я пациент</div>
                 </a>
             </div>
-        </div>
     </div>
 </div>
 
@@ -276,8 +274,8 @@
 
             <div class="form-row form-row--big">
                 <label class="field field-input field-required">
-                    <input class="input-text placeholder validate" data-validate="email-required" placeholder="Введите email" data-placeholder="Электронная почта"
-                           name="mail" id="f_modal_email" type="text">
+                    <input class="input-text placeholder validate input-mask" data-mask_tpl="phone_plus7" data-validate="number_phone-required" placeholder="Введите телефон" data-placeholder="Номер телефона"
+                           name="feedback_phone" id="f_phone" type="text">
                     <p class="error-message"></p>
                 </label>
             </div>
@@ -304,6 +302,77 @@
         </form>
     </div>
 </div>
+
+<div class="modal-window fade-in small-modal feedback-modal order-modal" data-modal="order-modal" id="order-modal">
+
+    <div class="modal-content">
+        <div class="title-with-filter">
+            <h3 class="h3">
+                Оформить заказ
+            </h3>
+            <a href="#" class="close" data-close-modal-button="order-modal" data-effect-type="open-modal-fade-effect"><i class="icon-cancel"></i></a>
+        </div>
+
+        <form class="form">
+            <div class="form-preview">
+                <div class="form-preview__img" style="background-image: url('/img/catalog/1.jpg')"></div>
+                <div class="form-preview__info">
+                    <div class="form-preview__title">Ультрафертил плюс</div>
+                    <div class="form-preview__size">Количество: <span id="order-count-text"></span>шт.</div>
+                </div>
+            </div>
+
+            <div class="form-row form-row--big">
+                <label class="field field-input field-required">
+                    <input class="input-text placeholder validate" data-validate="required" placeholder="Введите ваше имя" data-placeholder="ФИО"
+                           name="name" id="f_order_name" type="text">
+                    <p class="error-message"></p>
+                </label>
+            </div>
+
+            <div class="form-row form-row--big">
+                <label class="field field-input field-required">
+                    <input class="input-text placeholder validate input-mask" data-mask_tpl="phone_plus7" data-validate="number_phone-required" placeholder="Введите телефон" data-placeholder="Номер телефона"
+                           name="feedback_phone" id="f_order_phone" type="text">
+                    <p class="error-message"></p>
+                </label>
+            </div>
+
+
+            <div class="form-row form-row--big">
+                <label class="field field-input field-required">
+                    <input class="input-text placeholder validate" data-validate="email" placeholder="Введите email"
+                           data-placeholder="Электронная почта *"
+                           name="mail" id="f_order_mail" type="text">
+                    <p class="error-message"></p>
+                </label>
+            </div>
+
+
+            <input type="text" hidden name="cc" value="78">
+            <input type="text" hidden name="sub" value="78">
+            <input type="text" id="order-count" hidden name="count">
+
+            <div class="form-footer form-footer--reverse">
+
+                <button class="button nobr" type="submit">Оформить заказ</button>
+
+                <div class="form-footer__text">
+                    Нажимая кнопку вы соглашаетесь на <a href="#">обработку персональных данных</a> и с <a href="#">политикой конфиденциальности</a>
+                </div>
+            </div>
+
+            <div class="form-message">
+                <img class="error" src="./img/error.svg" alt="">
+                <img class="success" src="./img/success.svg" alt="">
+                <div class="title h4"></div>
+                <p class="text"></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+
 
 <div class="modal-window-pxl"></div>
 

@@ -1,42 +1,34 @@
-
-
-
-.swiper-arrows {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 77;
-    .swiper-button + .swiper-button {
-        margin-left: 1px;
-    }
-}
 .swiper-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $colorBlue;
-    opacity: 1;
+    position: absolute;
+    top: calc(50% - 14px);
     cursor: pointer;
-    width: 60px;
-    height: 45px;
-    transition: .1s linear;
+    i {
+        font-size: 25px;
+        color: $colorGray;
+    }
     &.swiper-button-prev {
-        img {
-            transform: rotate(90deg) translateZ(0)
-        }
+        left: -45px;
     }
     &.swiper-button-next {
-        img {
-            transform: rotate(-90deg) translateZ(0)
-        }
+        right: -45px;
     }
     @include desktop {
         &:hover {
-            background-color: darken($colorBlue, 10%);
+            i {
+                color: $colorMainBlue;
+            }
         }
     }
     &.swiper-button-disabled {
-        opacity: .8;
+        display: none;
+        opacity: .7;
+        @include desktop {
+            &:hover {
+                i {
+                    color: $colorGray;
+                }
+            }
+        }
     }
 
     @include only-mobile {

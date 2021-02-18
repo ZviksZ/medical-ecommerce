@@ -243,4 +243,48 @@
             }
         }
     }
+
+    .cd-quantity {
+        display: flex;
+        align-items: center;
+        margin: 15px auto 25px;
+        font-size: 20px;
+        .cd-quantity-num::-webkit-inner-spin-button,
+        .cd-quantity-num::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            margin: 0;
+        }
+        .cd-quantity-num {
+            font-size: 20px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            outline: none;
+            -moz-appearance: textfield;
+            width: 84px;
+            height: 40px;
+            border: 1px solid $colorGrayMiddle;
+            margin: 0 10px;
+            text-align: center;
+        }
+
+        .cd-quantity-plus, .cd-quantity-minus {
+            cursor: pointer;
+            font-size: 20px;
+            padding: 5px 12px;
+            width: 40px;
+            box-sizing: border-box;
+            border-radius: 4px;
+            outline: none;
+            height: 40px;
+
+            span {
+                display: inline-block;
+                height: 2px;
+                line-height: 0;
+            }
+        }
+    }
 }
+

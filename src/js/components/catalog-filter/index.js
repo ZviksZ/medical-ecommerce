@@ -45,12 +45,14 @@ export class CatalogFilter {
                $(item).prop('checked', false);
             });
 
-            $('#filter-select-all').prop('checked', false);
+
 
             $(e.currentTarget).prop('checked', true);
 
             this.isItFirstTouch = false;
          }
+
+         $('#filter-select-all').prop('checked', false);
       }
 
       this.getCatalogItems();

@@ -1,4 +1,12 @@
 .catalog-modal {
+    .catalog-categories-list {
+        padding-bottom: 80px;
+
+        @include only-mobile {
+            padding-bottom: 70px;
+        }
+    }
+
     .fixed-catalog-btn {
         position: fixed;
         bottom: 0;

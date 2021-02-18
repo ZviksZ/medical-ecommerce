@@ -166,6 +166,41 @@ input, textarea, select {
         }
     }
 
+    .form-preview {
+        display: flex;
+        margin: 0 0 20px;
+
+        .form-preview__img {
+            width: 117px;
+            height: 76px;
+            border: 1px solid #EFF0F0;
+            box-sizing: border-box;
+            border-radius: 6px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            -webkit-background-size: contain;
+            background-size: contain;
+            margin-right: 28px;
+        }
+
+        .form-preview__info {
+            .form-preview__title {
+                font-weight: 500;
+                font-size: 17px;
+                line-height: 29px;
+                color: $colorText;
+            }
+
+            .form-preview__size {
+                font-weight: 400;
+                font-size: 17px;
+                line-height: 29px;
+                color: $colorGray;
+
+            }
+        }
+    }
+
     &.show-message {
         .form-message {
             opacity: 1;

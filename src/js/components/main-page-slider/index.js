@@ -23,8 +23,24 @@ export class MainPageSlider {
          slidesPerView: 'auto',
          spaceBetween: 32,
          freeMode: true,
+         navigation: {
+            nextEl: '.product-popular-slider__wrap .swiper-button-next',
+            prevEl: '.product-popular-slider__wrap .swiper-button-prev',
+         },
          pagination: {
             el: '.swiper-pagination'
+         },
+         breakpoints: {
+            1000: {
+               slidesPerView: 3,
+               freeMode: false,
+            },
+            1350: {
+               slidesPerView: 4,
+            },
+            1600: {
+               slidesPerView: 5,
+            }
          }
       });
    };
