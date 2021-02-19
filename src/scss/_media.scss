@@ -1,0 +1,50 @@
+.media-video-modal {
+    .modal-content {
+        background: transparent;
+        max-width: 80%;
+        height: 100%;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include mobile {
+            max-width: 100%;
+            margin-right: 0;
+            margin-left: 0;
+        }
+    }
+
+    .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+
+        i {
+            color: $colorWhite;
+        }
+    }
+
+    .video-modal__wrap {
+        width: 100%;
+    }
+
+
+}
+
+.thumb-wrap {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.thumb-wrap iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-width: 0;
+    outline-width: 0;
+}

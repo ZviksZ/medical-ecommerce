@@ -12,14 +12,16 @@ export class CatalogFilter {
       this.$catalogList = $('#catalog__list');
       this.$catalogFilterList = $('#catalog-categories-list');
       this.$form = $('#catalog-filter-form');
+      this.$formSearchInput = $('#catalog-filter-field');
       this.$catalogTitle = $('#catalog-filter-title');
       this.$catalogFilterOpen = $('#catalog-filter-open');
       this.$catalogFilterBtn = $('#catalog-filter-btn');
       this.$catalogFilterText = $('#catalog-filter-text');
       this.$catalogClearSearch = $('#clear-catalog-search');
+      this.$catalogTabs = $('#catalog-filter-tabs');
 
+      this.currentTab = $('#catalog-filter-tabs .item.active').attr('data-tab');
       this.catalogType = $('#catalogType').val();
-
       this.isItFirstTouch = true;
 
       this.init();
@@ -30,8 +32,46 @@ export class CatalogFilter {
       this.$filter.find('input[type="checkbox"]').on('change', this.catalogCheckboxChange);
       this.$catalogFilterBtn.on('click', this.setCatalogData);
       this.$catalogClearSearch.on('click', this.clearSearch);
+      this.$catalogTabs.find('.item').on('click', this.changeTab);
+
+      this.initActiveTab();
+      this.getCatalogItems();
    };
 
+   /*Изменение таба в фильтре*/
+   changeTab = e => {
+      this.currentTab = $(e.currentTarget).attr('data-tab');
+
+      this.initActiveTab();
+      this.initInputLabel();
+      this.getCatalogItems();
+      this.setFilterTitle();
+   };
+
+   /*Изменение плейсхолдера в поле для ввода*/
+   initInputLabel = () => {
+      const label = this.$formSearchInput.find('.label');
+      const input = this.$formSearchInput.find('.input-text');
+
+      if (this.currentTab === 'nosology') {
+         label.text('Поиск по нозологиям');
+      } else {
+         label.text('Поиск по товарам');
+      }
+   };
+
+   /*Снятие чекбоксов в неактивном табе*/
+   initActiveTab = () => {
+      const noActiveBlock = this.$catalogFilterList.find('.tab-block:not([data-tab="' + this.currentTab + '"])');
+      const activeBlock = this.$catalogFilterList.find('.tab-block[data-tab="' + this.currentTab + '"]');
+
+      noActiveBlock.find('input').prop('checked', false);
+      activeBlock.find('input').prop('checked', true);
+      this.isItFirstTouch = true;
+      $('#filter-select-all').prop('checked', true);
+   };
+
+   /*Изменение чекбокса*/
    catalogCheckboxChange = e => {
       if ($(e.currentTarget).attr('id') === 'filter-select-all') {
          let isChecked = $(e.currentTarget).prop('checked');
@@ -45,8 +85,6 @@ export class CatalogFilter {
                $(item).prop('checked', false);
             });
 
-
-
             $(e.currentTarget).prop('checked', true);
 
             this.isItFirstTouch = false;
@@ -59,10 +97,13 @@ export class CatalogFilter {
       this.setFilterTitle();
    };
 
+   /*Установка количества выбранных чекбоксов в заголовке*/
    setFilterTitle = () => {
       let count = 0;
       let totalCount = 0;
-      this.$catalogFilterList.find('.letter-item:not(.hide) input[type="checkbox"]').each((_, item) => {
+      this.$catalogFilterList
+         .find('.tab-block[data-tab="' + this.currentTab + '"]')
+         .find('.letter-item:not(.hide) input[type="checkbox"]').each((_, item) => {
          totalCount += 1;
          if ($(item).prop('checked')) {
             count += 1;
@@ -82,6 +123,7 @@ export class CatalogFilter {
       }
    };
 
+   /*Поиск по чекбоксам*/
    catalogSearchInput = e => {
       let query = $(e.currentTarget).val();
 
@@ -94,6 +136,7 @@ export class CatalogFilter {
       this.catalogSearch(query);
    };
 
+   /*Очистка поля для поиска*/
    clearSearch = () => {
       this.$filter.find('#catalog-filter-search').val('');
 
@@ -102,6 +145,7 @@ export class CatalogFilter {
       this.$catalogClearSearch.removeClass('show');
    };
 
+   /*Поиск по чекбоксам*/
    catalogSearch = query => {
       this.$catalogFilterList.find('.letter-item').addClass('hide');
       this.$catalogFilterList.find('.letter-item .filter-item').addClass('hide');
@@ -130,6 +174,7 @@ export class CatalogFilter {
       }
    };
 
+   /*Запрос на получение товаров*/
    getCatalogItems = async () => {
       const checkedIds = [];
 
@@ -150,7 +195,8 @@ export class CatalogFilter {
             method: 'POST',
             body: JSON.stringify({
                ids: checkedIds,
-               type: this.catalogType
+               type: this.catalogType,
+               tab: this.$catalogTabs.find('.item.active').attr('data-tab')
             })
          })
             .then(res => res.json())
@@ -168,6 +214,7 @@ export class CatalogFilter {
       }
    };
 
+   /*Установка шаблонов карточек товаров*/
    setCatalogData = () => {
       let data = this.catalogData;
       let template = ``;
@@ -182,7 +229,7 @@ export class CatalogFilter {
          this.$catalogList.html(`<p class="text-align-center margin-top-x3">По вашему фильтру ничего не найдено</p>`);
       }
    };
-
+   /*ИШаблон карточки товара*/
    getItemTemplate = item => {
       let stars = this.getItemStars(item.stars);
       let itemType = this.getItemType(item);
@@ -212,6 +259,7 @@ export class CatalogFilter {
       `;
    };
 
+   /*Звездный рейтинг в карточке товара*/
    getItemStars = stars => {
       let count = +stars;
       let grayStarsCount = 5 - count;
@@ -227,6 +275,7 @@ export class CatalogFilter {
       return template;
    };
 
+   /*Тэг с типом на карточке товара*/
    getItemType = item => {
       return `
         <span class="card-item__tag color-${item.productType}">${item.productTypeName}</span>

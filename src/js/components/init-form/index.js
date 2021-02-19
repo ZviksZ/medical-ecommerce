@@ -90,5 +90,7 @@ export class InitForm {
          .removeClass('success')
          .addClass('empty');
       form.find('.field input').val('');
+
+      grecaptcha.reset();
    };
 }

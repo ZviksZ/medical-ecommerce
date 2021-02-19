@@ -138,6 +138,10 @@ input, textarea, select {
         .form-footer__captcha {
             position: relative;
 
+            @include mobile {
+                margin-bottom: 15px;
+            }
+
             .error-message {
                 margin: 5px 0 0;
                 font-size: 12px;

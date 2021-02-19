@@ -5,10 +5,12 @@
         @include desktop-small {
             padding-top: 15px;
         }
+
         .choices-custom {
             width: auto;
             max-width: 50%;
         }
+
         .cd-slider-wrap {
             width: 50%;
             overflow: hidden;
@@ -16,6 +18,7 @@
             @include desktop-small {
                 width: 30%;
             }
+
             .cd-slider {
                 .swiper-slide {
                     padding: 50px 0;
@@ -28,12 +31,14 @@
                     @include only-mobile {
                         padding: 20px 0;
                     }
+
                     .item {
                         display: flex;
                         background-repeat: no-repeat;
                         background-position: center center;
                         -webkit-background-size: contain;
                         background-size: contain;
+
                         &:before {
                             display: block;
                             float: left;
@@ -43,22 +48,26 @@
                     }
 
                 }
+
                 .swiper-pagination {
                     padding: 15px 0 25px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+
                     .swiper-pagination-bullet {
                         display: block;
                         width: 11px;
                         height: 11px;
-                        background: rgba(96,103,108,0.3);
+                        background: rgba(96, 103, 108, 0.3);
                         border-radius: 50%;
                         cursor: pointer;
+
                         &.swiper-pagination-bullet-active {
                             background: $colorBlue;
                         }
                     }
+
                     .swiper-pagination-bullet + .swiper-pagination-bullet {
                         margin-left: 11px;
                     }
@@ -66,6 +75,7 @@
                 }
             }
         }
+
         .cd-top__info {
             width: 50%;
             padding-left: 32px;
@@ -105,12 +115,14 @@
                 .display-flex {
                     flex-wrap: wrap;
                 }
+
                 .button {
                     width: 100%;
                     margin: 0 !important;
-                    &:first-child {
-                        margin-bottom: 24px !important;
-                    }
+                }
+
+                #cd-order__btn {
+                    margin-bottom: 24px !important;
                 }
             }
         }
@@ -128,6 +140,7 @@
             @include only-mobile {
                 margin-bottom: 32px;
             }
+
             .img {
                 display: flex;
                 width: 49%;
@@ -136,6 +149,7 @@
                 background-position: center center;
                 -webkit-background-size: cover;
                 background-size: cover;
+
                 &:before {
                     display: block;
                     content: '';
@@ -143,12 +157,15 @@
                     padding-top: 75%;
                 }
             }
+
             .cd-content__text {
                 width: 49%;
                 min-width: 49%;
+
                 .h5 {
                     margin-bottom: 14px;
                 }
+
                 p {
                     color: $colorGray;
                     margin-bottom: 29px;
@@ -168,6 +185,7 @@
                 }
             }
         }
+
         .cd-advantages {
             display: flex;
             flex-wrap: wrap;
@@ -175,6 +193,7 @@
             @include only-mobile {
                 margin: 40px 0 30px;
             }
+
             .item {
                 width: calc(25% - 32px);
                 margin: 0 16px 32px;
@@ -190,17 +209,20 @@
                     width: 100%;
                     margin: 0 0 32px;
                 }
+
                 .top {
                     display: flex;
                     align-items: flex-start;
                     height: 78px;
                     overflow: hidden;
+
                     img {
                         display: block;
                         width: 60px;
                         min-width: 60px;
                         margin-right: 22px;
                     }
+
                     @include desktop-medium {
                         .h5 {
                             line-height: 20px;
@@ -222,20 +244,24 @@
                         height: auto;
                     }
                 }
+
                 p {
                     margin-top: 14px;
                     color: $colorGray;
                 }
             }
         }
+
         .cd-sickness__list {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             flex-wrap: wrap;
+
             .no-input-checkbox {
                 width: 48%;
             }
+
             @include only-mobile {
                 .no-input-checkbox {
                     width: 100%;
@@ -249,6 +275,7 @@
         align-items: center;
         margin: 15px auto 25px;
         font-size: 20px;
+
         .cd-quantity-num::-webkit-inner-spin-button,
         .cd-quantity-num::-webkit-outer-spin-button {
             -webkit-appearance: none;
@@ -256,6 +283,7 @@
             appearance: none;
             margin: 0;
         }
+
         .cd-quantity-num {
             font-size: 20px;
             padding: 5px 10px;
@@ -278,6 +306,7 @@
             border-radius: 4px;
             outline: none;
             height: 40px;
+            margin-bottom: 0 !important;
 
             span {
                 display: inline-block;
