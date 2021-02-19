@@ -118,11 +118,11 @@
                 <a href="#" class="close" data-close-modal-button="catalog-modal" data-effect-type="open-modal-fade-effect"><i class="icon-cancel"></i></a>
             </div>
 
-            <div class="tabs margin-bottom margin-top-x2" id="catalog-filter-tabs">
+            <!--<div class="tabs margin-bottom margin-top-x2" id="catalog-filter-tabs">
                 <div class="item active" data-tab="nosology">По нозологиям</div>
                 <div class="item" data-tab="product">По товарам</div>
             </div>
-
+-->
             <div class="filter-search-block margin-top">
                 <label class="field field-input item with-search-icon" id="catalog-filter-field">
                     <input class="input-text placeholder" placeholder="Введите категорию" data-placeholder="Поиск по нозологиям"
@@ -132,39 +132,46 @@
                 <span id="clear-catalog-search" class="filter-clear-search">Отмена</span>
             </div>
 
-            <div class="filter-item filter-item__main">
-                <input type="checkbox" id="filter-select-all" name="filter-select-all" checked>
-                <label class="" for="filter-select-all">
+            <div class="tab-block filter-item filter-item__main" data-tab="nosology">
+                <input type="checkbox" class="select-all" id="select-all-nosology" data-tab="nosology">
+                <label class="" for="select-all-nosology">
+                    <span>Выбрать все</span>
+                </label>
+            </div>
+
+            <div class="tab-block filter-item filter-item__main" data-tab="product">
+                <input type="checkbox" class="select-all" id="select-all-product" data-tab="product">
+                <label class="" for="select-all-product">
                     <span>Выбрать все</span>
                 </label>
             </div>
 
             <form action="" id="catalog-filter-form">
                 <div class="catalog-categories-list" id="catalog-categories-list">
-                    <div class="tab-block" data-tab="nosology">
+                    <div class="tab-block catalog-block" data-tab="nosology">
                         <div class="letter-item">
                             <span class="letter">А</span>
                             <div class="filter-item">
-                                <input type="checkbox" id="filter-1" name="filter-1" checked>
-                                <label class="" for="filter-1">
+                                <input type="checkbox" id="1" name="filter-1">
+                                <label class="" for="1">
                                     <span>Аменореи</span>
                                 </label>
                             </div>
                             <div class="filter-item">
-                                <input type="checkbox" id="filter-2" name="filter-2" checked>
-                                <label class="" for="filter-2">
+                                <input type="checkbox" id="2" name="filter-2">
+                                <label class="" for="2">
                                     <span>Аменореи</span>
                                 </label>
                             </div>
                             <div class="filter-item">
-                                <input type="checkbox" id="filter-3" name="filter-3" checked>
-                                <label class="" for="filter-3">
+                                <input type="checkbox" id="3" name="filter-3">
+                                <label class="" for="3">
                                     <span>Аменореи</span>
                                 </label>
                             </div>
                             <div class="filter-item">
-                                <input type="checkbox" id="filter-4" name="filter-4" checked>
-                                <label class="" for="filter-4">
+                                <input type="checkbox" id="4" name="filter-4">
+                                <label class="" for="4">
                                     <span>Аменореи</span>
                                 </label>
                             </div>
@@ -173,42 +180,42 @@
                         <div class="letter-item">
                             <span class="letter">Б</span>
                             <div class="filter-item">
-                                <input type="checkbox" id="filter-12" name="filter-12" checked>
-                                <label class="" for="filter-12">
+                                <input type="checkbox" id="12" name="filter-12">
+                                <label class="" for="12">
                                     <span>Бактериальный</span>
                                 </label>
                             </div>
                             <div class="filter-item">
-                                <input type="checkbox" id="filter-22" name="filter-22" checked>
-                                <label class="" for="filter-22">
+                                <input type="checkbox" id="22" name="filter-22">
+                                <label class="" for="22">
                                     <span>Бактериальный</span>
                                 </label>
                             </div>
                             <div class="filter-item">
-                                <input type="checkbox" id="filter-32" name="filter-32" checked>
-                                <label class="" for="filter-32">
+                                <input type="checkbox" id="32" name="filter-32">
+                                <label class="" for="32">
                                     <span>Бактериальный</span>
                                 </label>
                             </div>
                             <div class="filter-item">
-                                <input type="checkbox" id="filter-42" name="filter-42" checked>
-                                <label class="" for="filter-42">
+                                <input type="checkbox" id="42" name="filter-42">
+                                <label class="" for="42">
                                     <span>Бактериальный</span>
                                 </label>
                             </div>
                         </div>
                     </div>
-                    <div class="tab-block" data-tab="product">
+                    <div class="tab-block catalog-block" data-tab="product">
                         <div class="letter-item">
                             <span class="letter">А</span>
                             <div class="filter-item">
-                                <input type="checkbox" id="filter-14" name="filter-1" checked>
+                                <input type="checkbox" id="filter-14" data-category="2" name="filter-1">
                                 <label class="" for="filter-14">
                                     <span>Анестетики</span>
                                 </label>
                             </div>
                             <div class="filter-item">
-                                <input type="checkbox" id="filter-24" name="filter-2" checked>
+                                <input type="checkbox" id="filter-24" data-category="3" name="filter-2">
                                 <label class="" for="filter-24">
                                     <span>Анальгетики</span>
                                 </label>

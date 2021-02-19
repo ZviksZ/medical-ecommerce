@@ -101,6 +101,12 @@
                 color: $colorBlue;
             }
         }
+
+        &.disabled {
+            opacity: 0.6;
+            color: $colorGray;
+            pointer-events: none;
+        }
     }
 
     .letter-item {
