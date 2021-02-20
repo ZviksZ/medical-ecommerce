@@ -366,6 +366,7 @@ export class CatalogFilter {
    getItemTemplate = item => {
       let stars = this.getItemStars(item.stars);
       let itemType = this.getItemType(item);
+      let itemImg = item.img && item.img !== '/netcat_files/' && item.img !== 'null' ? item.img : '/img/catalog/default.jpg'
 
       return `
          <a href="${item.url}" class="card-item">
@@ -378,7 +379,7 @@ export class CatalogFilter {
                     ${itemType}
                 </div>
                 <div class="card-item__content">
-                    <div class="card-item__img" style="background-image: url(${item.img})"></div>
+                    <div class="card-item__img" style="background-image: url(${itemImg})"></div>
                     <div class="card-item__text-wrap">
                         <div class="card-item__text-block">
                             <div class="card-item__title">${item.title}</div>

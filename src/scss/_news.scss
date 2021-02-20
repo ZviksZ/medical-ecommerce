@@ -53,4 +53,15 @@
         margin-top: 20px;
         color: $colorText;
     }
+
+    a {
+        color: $colorBlue;
+        transition: 0.1s ease;
+
+        @include desktop {
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
 }

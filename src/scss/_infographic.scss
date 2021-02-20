@@ -313,3 +313,14 @@ span.tab-block.active {
         }
     }
 }
+
+
+.page-no-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .no-found-subtitle {
+        margin: 15px 0;
+    }
+}
