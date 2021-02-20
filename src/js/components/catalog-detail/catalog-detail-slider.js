@@ -22,6 +22,10 @@ export class CatalogDetailSlider {
          lazy: true,
          resistance: false,
          slidesPerView: 1,
+         navigation: {
+            nextEl: '.cd-slider-wrap .swiper-button-next',
+            prevEl: '.cd-slider-wrap .swiper-button-prev',
+         },
          pagination: {
             el: '.swiper-pagination',
             clickable: true,

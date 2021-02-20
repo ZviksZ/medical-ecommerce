@@ -217,6 +217,8 @@
         &:nth-child(2) {
             width: calc(50% - 32px);
             margin: 0 16px 22px;
+            height: auto;
+
             @include desktop-small {
                 height: auto;
             }
