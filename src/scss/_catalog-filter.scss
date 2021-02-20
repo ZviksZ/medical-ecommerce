@@ -7,6 +7,16 @@
         }
     }
 
+    .filter-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include mobile {
+            flex-wrap: wrap;
+        }
+    }
+
     .fixed-catalog-btn {
         position: fixed;
         bottom: 0;

@@ -72,6 +72,10 @@
         justify-content: space-between;
         padding: 10px;
 
+        &.without-rating {
+            justify-content: flex-end;
+        }
+
         .card-item__rating {
             display: flex;
             align-items: center;

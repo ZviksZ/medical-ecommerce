@@ -72,6 +72,16 @@ function validateField($field, showError = true) {
 			}
 			break;
 
+		case 'required-min':
+			if (!val) {
+				error++;
+				message = 'Поле обязательно для заполнения';
+			} else if (val.length < 3) {
+				error++;
+				message = 'Минимальная длина 3 символа';
+			}
+			break;
+
 		//радио кнопки - обязательно для выбора
 		case 'required_checkbox_radio':
 			if (!+$field.find('input:checked').length) {

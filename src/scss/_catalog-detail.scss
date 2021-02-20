@@ -22,7 +22,7 @@
             .cd-slider {
                 .swiper-slide {
                     padding: 50px 0;
-                    border: 1px solid #EFF0F0;
+                    border: 1px solid #eff0f0;
                     box-sizing: border-box;
                     border-radius: 6px;
                     @include mobile {
@@ -46,7 +46,6 @@
                             padding-top: 64%;
                         }
                     }
-
                 }
 
                 .swiper-pagination {
@@ -71,7 +70,6 @@
                     .swiper-pagination-bullet + .swiper-pagination-bullet {
                         margin-left: 11px;
                     }
-
                 }
             }
         }
@@ -94,7 +92,6 @@
         }
 
         @include desktop-smaller {
-
         }
         @include mobile {
             flex-wrap: wrap;
@@ -129,6 +126,24 @@
     }
 
     .cd-content {
+        h2,
+        .h2,
+        h3,
+        .h3,
+        h4,
+        .h4,
+        .h5,
+        h5,
+        p,
+        ol,
+        ul {
+            margin-bottom: 30px;
+
+            @include mobile {
+                margin-bottom: 20px;
+            }
+        }
+
         .cd-content__info {
             display: flex;
             justify-content: space-between;
@@ -297,7 +312,8 @@
             text-align: center;
         }
 
-        .cd-quantity-plus, .cd-quantity-minus {
+        .cd-quantity-plus,
+        .cd-quantity-minus {
             cursor: pointer;
             font-size: 20px;
             padding: 5px 12px;
@@ -316,4 +332,3 @@
         }
     }
 }
-

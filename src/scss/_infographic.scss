@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     overflow: auto;
+
     .item {
         display: inline-block;
         font-weight: bold;
@@ -13,15 +14,18 @@
         border: 2px solid $colorGrayLight;
         cursor: pointer;
         white-space: nowrap;
+
         &.disabled {
             opacity: 0.5;
             pointer-events: none;
         }
+
         &.active {
             border: 2px solid $colorBlue !important;
             background: $colorBlue !important;
             color: $colorWhite !important;
         }
+
         @include desktop {
             &:hover {
                 border: 2px solid $colorBlue;
@@ -29,10 +33,12 @@
             }
         }
     }
+
     .item + .item {
         margin-left: 14px;
     }
 }
+
 .filter-btn {
     width: 100%;
     position: relative;
@@ -51,7 +57,8 @@
     align-items: center;
     border: 2px solid $colorBlue;
     cursor: pointer;
-    &:after{
+
+    &:after {
         font-family: "pentcroft" !important;
         position: absolute;
         top: 10px;
@@ -63,13 +70,29 @@
         width: 10px;
         height: 10px;
     }
+
+    .clear-btn {
+        display: none;
+        margin-right: 8px;
+        padding-top: 5px;
+    }
+
     .count {
         display: inline-block;
         margin-left: 2px;
         color: $colorBlue;
     }
 
+    &.show-clear {
+        padding: 10px 30px 10px 10px;
+
+        .clear-btn {
+            display: inline-block;
+        }
+    }
+
 }
+
 .breadcrumbs {
     display: flex;
     align-items: center;
@@ -79,6 +102,7 @@
     @include desktop-small {
         padding: 5px 0;
     }
+
     .item {
         display: inline-block;
         position: relative;
@@ -88,8 +112,10 @@
         text-decoration: none;
         white-space: nowrap;
     }
+
     .item + .item {
         margin-left: 29px;
+
         &:before {
             position: absolute;
             top: 13px;
@@ -101,6 +127,7 @@
             border-radius: 50%;
         }
     }
+
     a.item {
         @include desktop {
             &:hover {
@@ -109,16 +136,33 @@
         }
     }
 }
+
 .title-with-filter {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+
     .h1 {
         white-space: nowrap;
     }
-    .filter-btn {
-        width: 304px;
+
+    .close, .tabs {
+        margin-left: auto;
     }
+
+    .filter-btn {
+        width: 204px;
+        margin-top: 10px;
+    }
+
+    .filter-btn:first-of-type {
+        margin-left: auto;
+    }
+
+    .filter-btn + .filter-btn {
+        margin-left: 20px;
+    }
+
     @include desktop-small {
         margin-top: 15px !important;
     }
@@ -131,12 +175,19 @@
         .filter-btn {
             width: 100%;
         }
+
+        .filter-btn + .filter-btn {
+            margin-left: 0;
+            margin-top: 20px;
+        }
     }
 }
+
 .search-highlight {
     display: inline-block;
     background: #F1D693;
 }
+
 .no-input-checkbox {
     display: block;
     position: relative;
@@ -145,6 +196,7 @@
     font-size: 17px;
     color: $colorText;
     margin-bottom: 20px;
+
     &:before {
         content: "";
         position: absolute;
@@ -156,6 +208,7 @@
         background: $colorBlue;
         border: 1px solid $colorBlue;
     }
+
     &:after {
         content: "";
         position: absolute;
@@ -181,9 +234,14 @@
 
 .tab-block {
     display: none;
+
     &.active {
         display: block;
     }
+}
+
+span.tab-block.active {
+    display: inline-block !important;
 }
 
 
@@ -199,6 +257,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     .modal-content {
         width: 100%;
         height: auto;
@@ -218,6 +277,7 @@
     display: flex;
     flex-direction: column;
 }
+
 .download-link {
     position: relative;
     display: inline-flex;

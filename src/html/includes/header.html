@@ -13,11 +13,23 @@
     <meta name="theme-color" content="#ffffff">
     <link color="#544b3d" href="favicon/favicon/safari-pinned-tab.svg" rel="mask-icon">
 
-  <link href="css/style.bundle.css?v=1" rel="stylesheet"/>
+  <link href="css/style.bundle.css?v=4" rel="stylesheet"/>
 
     <title><%=title%></title>
 </head>
-<body>
+
+
+
+<% if (eng) { %>
+<body class="body-eng">
+    <% } else { %>
+
+    <body>
+        <% } %>
+
+
+
+
 <style>
     .preloader {
         display: none;
@@ -127,13 +139,29 @@
                         <a href="#">Вопрос-ответ</a>
                         <a href="#">Контакты</a>
                     </div>
+                    <% if (eng) { %>
+                    <a href="/" class="header-top__link">RU</a>
+                    <% } else { %>
+
                     <a href="#" class="header-top__link">EN</a>
+                    <% } %>
                     <a href="#" class="header-top__link with-icon" data-open-modal-button="search-modal" data-effect-type="open-modal-fade-effect">
                         <i class="icon-search"></i>
                     </a>
+                    <% if (eng) { %>
+                    <a href="mailto:pentcroft@mail.ru" class="header-top__link email-link">
+                        pentcroft@mail.ru
+                    </a>
+                    <% } else { %>
+
                     <a href="mailto:info@pentcroft.ru" class="header-top__link email-link">
                         info@pentcroft.ru
                     </a>
+                    <% } %>
+
+
+
+
                 </div>
             </div>
 
@@ -142,7 +170,14 @@
             <div class="container">
                 <div class="header-content">
                     <a href="/" class="logo">
+
+
+                        <% if (eng) { %>
+                        <img src="./img/logo-eng.svg" alt="">
+                        <% } else { %>
+
                         <img src="./img/logo-text.svg" alt="">
+                        <% } %>
                     </a>
 
                     <div class="header-main__menu">
@@ -193,7 +228,13 @@
             <div class="header-menu__footer">
                 <a href="mailto:info@pentcroft.ru" class="header-menu__item email-link">info@pentcroft.ru</a>
 
+                <% if (eng) { %>
+                <a href="/" class="header-menu__round-link mla">RU</a>
+                <% } else { %>
+
                 <a href="#" class="header-menu__round-link mla">EN</a>
+                <% } %>
+
                 <a href="#" class="header-menu__round-link" data-open-modal-button="search-modal" data-effect-type="open-modal-fade-effect">
                     <i class="icon-search"></i>
                 </a>
@@ -203,6 +244,7 @@
     </div>
 
 <div class="preloader-page-pxl"></div>
+
 
 <div class="body">
     <!-- Для главной страницы не отображать header-margin -->

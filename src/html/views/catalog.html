@@ -1,6 +1,6 @@
 <% var data = {
 title: "Каталог | Pentcroft",
-header: "blue"
+header: "blue", eng: false
 }; %>
 <%= _.template(require('./../includes/header.html').default)(data) %>
 
@@ -15,12 +15,20 @@ header: "blue"
         <div class="title-with-filter margin-top-x2">
             <h1 class="h1">Каталог продуктов</h1>
 
-            <div class="filter-btn catalog-filter-open" data-tab="product" data-open-modal-button="catalog-modal" data-effect-type="open-modal-fade-effect">
-                Товары<span class="text-for-search hide">:</span>
+            <div class="filter-btn catalog-filter-open" data-tab="category" data-open-modal-button="catalog-modal" data-effect-type="open-modal-fade-effect">
+                <span class="clear-btn" title="Очистить фильтр">
+                    <i class="icon-cancel"></i>
+                </span>
+                <span>Категории</span>
+                <span class="text-for-search hide">:</span>
                 <span class="count"></span>
             </div>
             <div class="filter-btn catalog-filter-open" data-tab="nosology" data-open-modal-button="catalog-modal" data-effect-type="open-modal-fade-effect">
-                Нозологии<span class="text-for-search hide">:</span>
+                <span class="clear-btn" title="Очистить фильтр">
+                    <i class="icon-cancel"></i>
+                </span>
+                <span>Нозологии</span>
+                <span class="text-for-search hide">:</span>
                 <span class="count"></span>
             </div>
         </div>
