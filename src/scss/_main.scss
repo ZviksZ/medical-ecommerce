@@ -78,7 +78,7 @@
                 border-radius: 10px;
                 opacity: 0;
                 transform: translateX(100%);
-                transition: 0.8s;
+                transition: 0.8s ease;
                 transition-delay: 1.1s;
                 text-decoration: none;
                 &:before {
@@ -115,9 +115,7 @@
                     -webkit-background-size: contain;
                     background-size: contain;
                     opacity: 0;
-                    transition: all 0.4s ease;
-                    transition-delay: 1.3s;
-                    -webkit-backface-visibility:hidden;
+                    transition: 0.4s ease;
                     transform: translateX(0) translateY(10px);
                 }
                 .text {
@@ -133,8 +131,7 @@
                     border-radius: 0 10px 0 30px;
                     color: #418293;
                     opacity: 0;
-                    transition: 0.8s;
-                    transition-delay: 0s;
+                    transition: 0.8s ease;
                     transform: translateX(50px);
                 }
                 @include desktop {
@@ -278,6 +275,11 @@
                 .img {
                     opacity: 1;
                     transform:  translateX(0) translateY(10px);
+
+                    @include mobile {
+                        transform:  translateX(0) translateY(0);
+                        border-radius: 10px;
+                    }
                 }
             }
         }

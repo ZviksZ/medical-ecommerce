@@ -206,6 +206,9 @@ input, textarea, select {
     }
 
     &.show-message {
+        @include mobile {
+            max-height: 500px;
+        }
         .form-message {
             opacity: 1;
             transform: translateY(0);

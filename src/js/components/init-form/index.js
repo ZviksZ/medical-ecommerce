@@ -50,12 +50,16 @@ export class InitForm {
                form.find('.close-form-message').show();
 
                form.addClass('show-message success');
+
+               this.scrollToMessage(form)
             },
             error: res => {
                form.find('.form-message .title').text('Ошибка');
                form.find('.form-message .text').text('Отправка данных не удалась. Попробуйте повторить отправку формы.');
 
                form.addClass('show-message error');
+
+               this.scrollToMessage(form)
 
                setTimeout(() => {
                   form.removeClass('show-message error');
@@ -65,6 +69,14 @@ export class InitForm {
          });
       }
    };
+
+   scrollToMessage = (form) => {
+      if (!$('html').hasClass('open-modal') && $(window).width() < 1000) {
+         $('html, body').animate({
+            scrollTop: form.offset().top
+         }, 0)
+      }
+   }
 
    getCaptcha = (form) => {
       let captachaError = false;

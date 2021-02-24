@@ -1,19 +1,19 @@
-import * as $ from 'jquery';
-import { CatalogDetailOrder, CatalogDetailSlider } from './components/catalog-detail';
-import { CatalogFilter } from './components/catalog-filter';
-import { CustomSelect } from './components/custom-select';
-import { CustomTabs } from './components/custom-tabs';
-import { initMaskedInput, initPlaceholders } from './components/form';
-import { Header }                     from './components/header';
-import { HeaderMenu }                 from './components/header-menu';
-import { initInfoTabs, videoPlayBtn } from './components/helpers/simple-fn.js';
-import { InitForm }                   from './components/init-form';
-import { MainPageSlider }             from './components/main-page-slider';
-import { InitMap }                    from './components/map';
-import { ModalWindowFullScreen }      from './components/modal-window-fullscreen';
-import { Preloader }                  from './components/preloader';
-import { Search }                     from './components/search';
-import { MediaVideo }                 from './components/video-modal';
+import * as $                                           from 'jquery';
+import { CatalogDetailOrder, CatalogDetailSlider }      from './components/catalog-detail';
+import { CatalogFilter }                                from './components/catalog-filter';
+import { CustomSelect }                                 from './components/custom-select';
+import { CustomTabs }                                   from './components/custom-tabs';
+import { initMaskedInput, initPlaceholders }            from './components/form';
+import { Header }                                       from './components/header';
+import { HeaderMenu }                                   from './components/header-menu';
+import { initAboutPageTab, initInfoTabs, videoPlayBtn } from './components/helpers/simple-fn.js';
+import { InitForm }                                     from './components/init-form';
+import { MainPageSlider }                               from './components/main-page-slider';
+import { InitMap }                                      from './components/map';
+import { ModalWindowFullScreen }                        from './components/modal-window-fullscreen';
+import { Preloader }                                    from './components/preloader';
+import { Search }                                       from './components/search';
+import { MediaVideo }                                   from './components/video-modal';
 window.jQuery = require('jquery');
 
 $(function() {
@@ -46,6 +46,8 @@ $(function() {
    initInfoTabs();
 
    videoPlayBtn();
+
+   initAboutPageTab();
 
    new MediaVideo();
 

@@ -1,5 +1,5 @@
 import * as $ from 'jquery';
-import { declOfNum, highlightSomeText } from '../helpers';
+import { declOfNum, highlightSomeText, lockBodyOnModalOpen } from '../helpers';
 
 export class CatalogFilter {
    constructor() {
@@ -29,6 +29,8 @@ export class CatalogFilter {
 
       this.availableNosologies = [];
       this.availableCategories = [];
+
+      this.firstTouchFilter = null;
 
       this.init();
    }
@@ -108,17 +110,18 @@ export class CatalogFilter {
       this.$filter.find('.tab-block[data-tab="' + type + '"] input:not(.disabled)').each((index, item) => {
          $(item).prop('checked', isChecked);
       });
+
+      this.preparateData();
+      this.setTitles();
    };
 
    /*Изменение в нозологиях*/
    changeFilters = e => {
-      if (this.currentTab === 'nosology') {
-         this.getAvailableNosology();
-      } else {
-         this.getAvailableCategories();
+      this.preparateData();
+      if (!this.firstTouchFilter) {
+         this.firstTouchFilter = this.currentTab;
       }
 
-      this.filterData();
       if (this.currentTab === 'nosology') {
          this.disableCategories();
       } else {
@@ -126,7 +129,52 @@ export class CatalogFilter {
       }
 
       this.uncheckSelectAll();
+
+      if (this.firstTouchFilter === this.currentTab) {
+         this.checkDisabling();
+      }
+
       this.setTitles();
+   };
+
+   preparateData = () => {
+      if (this.currentTab === 'nosology') {
+         this.getAvailableNosology();
+      } else {
+         this.getAvailableCategories();
+      }
+
+      this.filterData();
+   };
+
+   checkDisabling = () => {
+      const count = this.$filter.find('.tab-block.catalog-block[data-tab="' + this.currentTab + '"] input:checked').length;
+
+      if (count === 0) {
+         this.$filter
+            .find('.tab-block.catalog-block input')
+            .prop('checked', false)
+            .removeClass('disabled')
+            .closest('.filter-item')
+            .removeClass('disabled');
+
+         this.getAvailableCategories();
+         this.getAvailableNosology();
+         this.filterData();
+
+         let filterOpenBtn = $('.catalog-filter-open');
+         this.$catalogTitle.find('.text-for-search').addClass('hide');
+         filterOpenBtn.find('.text-for-search').addClass('hide');
+         this.$catalogTitle.find('.count').text('');
+         filterOpenBtn.find('.count').text('');
+         filterOpenBtn.removeClass('show-clear');
+
+         this.$filter.find('.select-all').prop('checked', false);
+
+         this.firstTouchFilter = null;
+      }
+
+
    };
 
    setTitles = () => {
@@ -143,7 +191,9 @@ export class CatalogFilter {
             }
          });
 
-      if (count < totalCount && count !== 0) {
+
+
+      if (count > 0) {
          this.$catalogTitle.find('.text-for-search').removeClass('hide');
          activeFilterOpenBtn.find('.text-for-search').removeClass('hide');
          this.$catalogTitle.find('.count').text(count);
@@ -163,6 +213,7 @@ export class CatalogFilter {
       let allCount = this.$filter.find('.tab-block.catalog-block[data-tab="' + this.currentTab + '"] input:not(.disabled)').length;
       let checkedCount = this.$filter.find('.tab-block.catalog-block[data-tab="' + this.currentTab + '"] input:checked').length;
       let isCheck = allCount === checkedCount;
+
 
       this.$filter.find('.select-all[data-tab="' + this.currentTab + '"]').prop('checked', isCheck);
    };
@@ -186,9 +237,7 @@ export class CatalogFilter {
       let availableCategories = [];
 
       this.$filter.find('.tab-block.catalog-block[data-tab="category"] input[type="checkbox"]').each(function() {
-
          if ($(this).prop('checked')) {
-
             availableCategories.push($(this).attr('data-category'));
          }
       });
@@ -268,6 +317,9 @@ export class CatalogFilter {
          let isNosTrue = this.availableNosologies.length === 0;
          let isCatTrue = this.availableCategories.length === 0;
 
+
+         console.log(this.availableNosologies)
+         console.log(this.availableCategories)
          if (!isNosTrue) {
             for (let i = 0; i < nosologies.length; i++) {
                if (this.availableNosologies.includes(nosologies[i])) {
@@ -361,12 +413,14 @@ export class CatalogFilter {
       } else {
          this.$catalogList.html(`<p class="text-align-center margin-top-x3">По вашему фильтру ничего не найдено</p>`);
       }
+
+      lockBodyOnModalOpen(false);
    };
    /*ИШаблон карточки товара*/
    getItemTemplate = item => {
       let stars = this.getItemStars(item.stars);
       let itemType = this.getItemType(item);
-      let itemImg = item.img && item.img !== '/netcat_files/' && item.img !== 'null' ? item.img : '/img/catalog/default.jpg'
+      let itemImg = item.img && item.img !== '/netcat_files/' && item.img !== 'null' ? item.img : '/img/catalog/default.jpg';
 
       return `
          <a href="${item.url}" class="card-item">

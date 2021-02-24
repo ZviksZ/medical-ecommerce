@@ -27,7 +27,7 @@ header: "blue", eng: false
 
             <div class="form-row">
                 <label class="field field-input field-required">
-                    <input class="input-text placeholder validate" data-validate="required" placeholder="Введите ваше имя" data-placeholder="ФИО"
+                    <input class="input-text placeholder validate" data-validate="required-min" placeholder="Введите ваше имя" data-placeholder="ФИО"
                            name="name" id="f_name" type="text">
                     <p class="error-message"></p>
                 </label>
@@ -53,15 +53,15 @@ header: "blue", eng: false
 
             <div class="form-row">
                 <label class="field field-input field-required">
-                    <input class="input-text placeholder validate" data-validate="required" placeholder="Введите ИНН" data-placeholder="ИНН контрагента"
+                    <input class="input-text placeholder validate" data-validate="required-min-number" data-min-length="12" placeholder="Введите ИНН" data-placeholder="ИНН контрагента"
                            name="inn" id="f_inn" type="text">
                     <p class="error-message"></p>
                 </label>
-                <label class="field field-input field-required">
+               <!-- <label class="field field-input field-required">
                     <input class="input-text placeholder validate" data-validate="required" placeholder="Введите ИНН контрагента" data-placeholder="ИНН контрагента"
                            name="c-inn" id="f_c-inn" type="text">
                     <p class="error-message"></p>
-                </label>
+                </label>-->
             </div>
 
             <input type="text" hidden name="cc" value="78">

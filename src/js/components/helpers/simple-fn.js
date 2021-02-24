@@ -25,3 +25,18 @@ export function videoPlayBtn() {
       }
    });
 }
+
+export function initAboutPageTab() {
+   if ($('.about').length > 0) {
+      const activeTab = localStorage.getItem('aboutActiveTab')
+      if (activeTab) {
+         $('.about .tabs .item[data-tab="' + activeTab + '"]').click()
+         localStorage.removeItem('aboutActiveTab')
+      }
+
+
+      $('.about .about-list .about-list__item').on('click', function() {
+         localStorage.setItem('aboutActiveTab', $(this).closest('.tab-block').attr('data-tab'))
+      })
+   }
+}

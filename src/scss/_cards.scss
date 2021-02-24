@@ -38,7 +38,13 @@
 
     @include mobile {
         .swiper-button {
-            display: none;
+            z-index: 10;
+        }
+        .swiper-button.swiper-button-next {
+            right: 5px;
+        }
+        .swiper-button.swiper-button-prev {
+            left: 5px;
         }
     }
 }

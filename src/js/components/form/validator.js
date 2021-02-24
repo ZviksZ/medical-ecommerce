@@ -1,5 +1,6 @@
-import * as $ from 'jquery';
-import moment from 'moment';
+import * as $        from 'jquery';
+import moment        from 'moment';
+import { declOfNum } from '../helpers';
 
 import { getMobilePhoneClearValue } from './inputs';
 
@@ -58,6 +59,7 @@ function validateField($field, showError = true) {
 	const plh = $field.attr('data-placeholder');
 	const type = $field.attr('data-validate');
 	const errorMessage = $field.attr('data-error_message');
+	const minLength = $field.attr('data-min-length') || 3;
 
 	const mobilePhoneInvalidFirstSymbols = [ '0', '1', '2', '7' ];
 
@@ -76,9 +78,22 @@ function validateField($field, showError = true) {
 			if (!val) {
 				error++;
 				message = 'Поле обязательно для заполнения';
-			} else if (val.length < 3) {
+			} else if (val.length < minLength) {
 				error++;
-				message = 'Минимальная длина 3 символа';
+				message = `Минимальная длина ${minLength} ${declOfNum(minLength, ['символ', 'символа', 'символов'])}`;
+			}
+			break;
+
+		case 'required-min-number':
+			if (!val) {
+				error++;
+				message = 'Поле обязательно для заполнения';
+			} else if (val.search(regNum) === -1) {
+				error++;
+				message = 'Только цифры';
+			} else if (val.length < minLength) {
+				error++;
+				message = `Минимальная длина ${minLength} ${declOfNum(minLength, ['символ', 'символа', 'символов'])}`;
 			}
 			break;
 

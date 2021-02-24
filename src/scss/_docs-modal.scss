@@ -63,12 +63,21 @@
         }
 
         @include only-mobile {
-            margin: 27px 0 0;
-            flex-wrap: wrap;
+            margin: 27px -12px 0;
 
             .docs-cards__item {
-                width: 100%;
-                margin: 0 0 18px;
+                width: calc(50% - 24px);
+                margin: 0 12px;
+
+                .docs-cards__item-img {
+                    height: 136px;
+                }
+
+                .docs-cards__item-text {
+                    font-size: 20px;
+                    line-height: 32px;
+                    padding: 9px;
+                }
             }
         }
     }

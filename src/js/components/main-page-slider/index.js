@@ -22,7 +22,7 @@ export class MainPageSlider {
          lazy: true,
          slidesPerView: 'auto',
          spaceBetween: 32,
-         freeMode: true,
+         centeredSlides: true,
          navigation: {
             nextEl: '.product-popular-slider__wrap .swiper-button-next',
             prevEl: '.product-popular-slider__wrap .swiper-button-prev',
@@ -33,13 +33,15 @@ export class MainPageSlider {
          breakpoints: {
             1000: {
                slidesPerView: 3,
-               freeMode: false,
+               centeredSlides: false,
             },
             1350: {
                slidesPerView: 4,
+               centeredSlides: false,
             },
             1600: {
                slidesPerView: 5,
+               centeredSlides: false,
             }
          }
       });
