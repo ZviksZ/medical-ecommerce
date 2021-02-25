@@ -59,7 +59,7 @@ function validateField($field, showError = true) {
 	const plh = $field.attr('data-placeholder');
 	const type = $field.attr('data-validate');
 	const errorMessage = $field.attr('data-error_message');
-	const minLength = $field.attr('data-min-length') || 3;
+	const minLength = +$field.attr('data-min-length') || 3;
 
 	const mobilePhoneInvalidFirstSymbols = [ '0', '1', '2', '7' ];
 
