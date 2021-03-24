@@ -26,7 +26,11 @@ export class MediaVideo {
 
       let videoId = $(e.currentTarget).attr('data-video');
 
-      let videoTemplate = '<div class="thumb-wrap"><iframe width="560" height="315" src="https://www.youtube.com/embed/' + videoId + '" frameborder="0" allowfullscreen></iframe></div>';
+      if (videoId.split('/').length === 1) {
+        videoId = `https://www.youtube.com/embed/${videoId}`
+      }
+
+      let videoTemplate = '<div class="thumb-wrap"><iframe width="560" height="315" src="' + videoId + '" frameborder="0" allowfullscreen></iframe></div>';
 
       this.$modal.find('.modal-content #video').html(videoTemplate);
    };
